@@ -3,10 +3,14 @@ import logo from "./logo.svg";
 import "./App.css";
 import Card from "./components/commons/card.js";
 import Home from "./components/commons/homeIcon";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Home></Home>
+    <Router>
+      <Route path="/test" component={Card} />
+    </Router>
+    // <Home></Home>
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
