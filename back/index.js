@@ -1,0 +1,1 @@
+var sequelize = new Sequelize('localhost:3065');
