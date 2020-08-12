@@ -33,12 +33,10 @@ export default function TransitionsModal(props) {
 
   return (
     <div>
-      <Typography
-        color="primary"
-        onClick={handleOpen}
-        style={{ cursor: "pointer" }}
-      >
-        <b>{props.value}</b>
+      <Typography color="primary">
+        <b onClick={handleOpen} style={{ cursor: "pointer" }}>
+          {props.value}
+        </b>
       </Typography>
 
       <Modal
