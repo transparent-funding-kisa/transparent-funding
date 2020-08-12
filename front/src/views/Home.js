@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState} from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
@@ -10,22 +11,9 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import Carousel from 'react-bootstrap/Carousel'
+import 'bootstrap/dist/css/bootstrap.css';
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -57,12 +45,28 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
+  logo: {
+    flexShrink: 0,
+    height: 400,
+    alignItems: 'center',
+    marginBottom: theme.spacing(2),
+    width : '100%'
+  }
 }));
+
+
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-export default function Album() {
+function Home() {
   const classes = useStyles();
+
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+
 
   return (
     <React.Fragment>
@@ -79,6 +83,45 @@ export default function Album() {
         {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
+          <Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="http://www.icons101.com/icon_png/size_256/id_79394/youtube.png"
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="http://www.icons101.com/icon_png/size_256/id_80975/GoogleInbox.png"
+          alt="Second slide"
+        />
+
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="http://www.icons101.com/icon_png/size_256/id_76704/Google_Settings.png"
+          alt="Third slide"
+        />
+
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
+          <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
               Album layout
             </Typography>
@@ -144,10 +187,10 @@ export default function Album() {
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
           Something here to give the footer a purpose!
         </Typography>
-        <Copyright />
       </footer>
       {/* End footer */}
     </React.Fragment>
   );
 }
 
+export default Home 
