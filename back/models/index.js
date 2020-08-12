@@ -19,6 +19,8 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
+//모델 등록
+db.user = require("./user.js")(sequelize, Sequelize);
+
 
 module.exports = db;
