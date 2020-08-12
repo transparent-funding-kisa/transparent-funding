@@ -7,6 +7,10 @@ module.exports = app => {
     app.use('/api', router); 
 
     // Create a new User  //실제 접근 주소 http://~/api/join
-    router.post("/signup", users.create);
+    router.post("/signup", users.signup);
+
+    router.post("/signin", users.signin);
+
+    
 
   };
