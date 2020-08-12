@@ -1,6 +1,8 @@
 const db = require("../models");
 const User = db.user;
 const Op = db.Sequelize.Op;
+const jwt = require('jsonwebtoken');
+const secretKey = require("../config/jwtKey.js").key;
 
 exports.signup = (req, res) => {
     // Validate request
@@ -35,13 +37,12 @@ exports.signup = (req, res) => {
   exports.signin = (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-  
-    console.log(email);
     
     User.findOne({ where: { email: email } })
       .then(data => {
         if (data.password === password) {
-        res.send("유저 고유번호: " + data.id, data.email);} // session.save(data.id, data.user) or make jwt
+          const token = jwt.sign({userNumber: data.id, userEmail: data.email}, secretKey, {expiresIn : '30d'});         
+          res.send(token);}
         else res.send({
           message: "password is not matche with email = " + email
         })
