@@ -21,6 +21,6 @@ db.sequelize = sequelize;
 
 //모델 등록
 db.user = require("./user.js")(sequelize, Sequelize);
-
+db.project = require("./project.js")(sequelize, Sequelize);
 
 module.exports = db;
