@@ -18,6 +18,7 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/FundingApply/:Id" exact component={FundingApply}></Route>
+
         {/* <Route path="/1" component={Test}></Route> */}
       </Switch>
     </BrowserRouter>

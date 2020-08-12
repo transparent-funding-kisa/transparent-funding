@@ -17,14 +17,14 @@ export default function ContainedButtons(props) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Button variant="contained" color="primary" href={props.value}>
+      <Button variant="contained" color={props.color} href={props.value}>
         {props.value}
       </Button>
     </div>
   );
 }
 
-ContainedButtons.defaultProps = { value: "작성하기" };
+ContainedButtons.defaultProps = { value: "작성하기", color: "primary" };
 
 function UploadButtons() {
   const classes = useStyles();

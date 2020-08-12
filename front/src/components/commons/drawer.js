@@ -15,6 +15,7 @@ import MailIcon from "@material-ui/icons/Mail";
 import Accordion from "./accordion";
 import HomeIcon from "@material-ui/icons/Home";
 import FundingApply2 from "../../views/FundingApply2";
+import FundingApply3 from "../../views/FundingApply3";
 
 const drawerWidth = 240;
 
@@ -55,7 +56,7 @@ export default function PermanentDrawerLeft(props) {
   if (inputNum === 0) render = <Accordion></Accordion>;
   else if (inputNum === 1) render = <div>1번째 페이지</div>;
   else if (inputNum === 2) render = <FundingApply2></FundingApply2>;
-  else if (inputNum === 3) render = <div>3번째 페이지</div>;
+  else if (inputNum === 3) render = <FundingApply3></FundingApply3>;
   else if (inputNum === 4) render = <div>4번째 페이지</div>;
   else if (inputNum === 5) render = <div>5번째 페이지</div>;
   else if (inputNum === 6) render = <div>6번째 페이지</div>;
@@ -90,6 +91,7 @@ export default function PermanentDrawerLeft(props) {
             }}
           ></HomeIcon>
         </a>
+
         <b>조현학의 펀딩작성 페이지</b>
         <div className={classes.toolbar} />
         <Divider />
