@@ -9,9 +9,12 @@ import FundingApply3Story from "../views/FundingApply3Story";
 
 const FundingApply3 = () => {
   const [open, setOpen] = useState(false);
+  const [display, setDisplay] = useState("none");
+
   const handlebtnFade = (e) => {
     console.log(open);
     setOpen(!open);
+    setDisplay(open ? "none" : "block");
   };
   return (
     <>
@@ -45,11 +48,17 @@ const FundingApply3 = () => {
       <Button variant="contained" color="primary" onClick={handlebtnFade}>
         동의 하기
       </Button>
-      <Fade in={open}>
+
+      <Fade in={open} style={{ display: display }}>
         <div>
           <FundingApply3Story></FundingApply3Story>
         </div>
       </Fade>
+      <br></br>
+      <br></br>
+      <Button variant="contained" color="primary">
+        저장 하기
+      </Button>
     </>
   );
 };
