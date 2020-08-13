@@ -8,8 +8,8 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 300,
-    minWidth: 275,
+    maxWidth: 800,
+    minWidth: 100,
   },
   bullet: {
     display: "inline-block",
@@ -17,16 +17,23 @@ const useStyles = makeStyles({
     transform: "scale(0.8)",
   },
   title: {
+    fontWeight: "bold",
     fontSize: 14,
   },
   pos: {
-    marginBottom: 12,
+    fontSize: 13,
   },
 });
 
-export default function OutlinedCard() {
+export default function OutlinedCard(props) {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+  const list = props.list.map((data) => (
+    <li>
+      <Typography color="textSecondary" variant="overline">
+        {data}
+      </Typography>
+    </li>
+  ));
 
   return (
     <Card className={classes.root} variant="outlined">
@@ -36,23 +43,14 @@ export default function OutlinedCard() {
           color="textSecondary"
           gutterBottom
         >
-          Word of the Day
+          {props.head}
         </Typography>
-        <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
+        <ul style={{ listStyleType: "none", margin: 0, padding: 0 }}>{list}</ul>
         <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography>
-        <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+          {props.body}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   );
 }
+OutlinedCard.defaultProps = { head: "", body: "", list: [] };

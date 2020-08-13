@@ -5,11 +5,16 @@ import Btn from "../components/commons/button";
 import Modal from "../components/commons/modal";
 import Button from "@material-ui/core/Button";
 import Fade from "@material-ui/core/Fade";
+import FundingApply3Story from "../views/FundingApply3Story";
 
 const FundingApply3 = () => {
   const [open, setOpen] = useState(false);
+  const [display, setDisplay] = useState("none");
+
   const handlebtnFade = (e) => {
+    console.log(open);
     setOpen(!open);
+    setDisplay(open ? "none" : "block");
   };
   return (
     <>
@@ -35,17 +40,25 @@ const FundingApply3 = () => {
       <p>
         <b>스토리 광고 심의 동의</b>
       </p>
+
       <Modal value="공통 표시·광고 가이드라인"></Modal>
       <Modal value="식품 표시·광고 가이드라인"></Modal>
       <Modal value="화장품 표시·광고 가이드라인"></Modal>
       <Modal value="건강보조기구 표시·광고 가이드라인"></Modal>
-      <Btn value="동의 하기" />
       <Button variant="contained" color="primary" onClick={handlebtnFade}>
-        Primary
+        동의 하기
       </Button>
-      <Fade in={false}>
-        <h1>test</h1>
+
+      <Fade in={open} style={{ display: display }}>
+        <div>
+          <FundingApply3Story></FundingApply3Story>
+        </div>
       </Fade>
+      <br></br>
+      <br></br>
+      <Button variant="contained" color="primary">
+        저장 하기
+      </Button>
     </>
   );
 };
