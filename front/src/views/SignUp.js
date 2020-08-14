@@ -24,7 +24,7 @@ class Signup extends React.Component{
         return(
             <div>
             
-
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
             <center>
             <DialogTitle>Create new account</DialogTitle><br></br>
 

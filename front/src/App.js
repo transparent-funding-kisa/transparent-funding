@@ -4,6 +4,8 @@ import { useRoutes } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/core";
 import Signup from './views/SignUp';
 import Signin from './views/SignIn';
+import Mypage from './views/MyPage';
+
 
 // import GlobalStyles from "src/components/GlobalStyles";
 // import "src/mixins/chartjs";
@@ -23,6 +25,10 @@ const App = () => {
         <Route path="/FundingApply/:Id" exact component={FundingApply}></Route>
         <Route path="/Signup" exact component={Signup}></Route>
         <Route path="/Signin" exact component={Signin}></Route>
+        <Route path="/MyPage" exact component={Mypage}></Route>
+
+        
+        
         
 
         {/* <Route path="/1" component={Test}></Route> */}
