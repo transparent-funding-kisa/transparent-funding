@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Card from '../components/commons/card';
 import Modal from '@material-ui/core/Modal';
+import FormDialog from './FormDialog';
 
 const marginStyle = {
   marginLeft: '260px',
@@ -20,9 +21,11 @@ const FundingApply4 = () => {
       <h1>리워드 설계</h1>
       <Card head="리워드 설계 조건" list={list}></Card>
       <br></br>
-      <Button variant="contained" color="primary">
+      <FormDialog></FormDialog>
+
+      {/* <Button variant="contained" color="primary">
         추가 하기
-      </Button>
+      </Button> */}
     </div>
   );
 };

@@ -147,7 +147,7 @@ export default function FullWidthTabs(props) {
           centered
         >
           <Tab label="스토리" {...a11yProps(0)} />
-          <Tab label="펀딩 안내" {...a11yProps(1)} />
+          <Tab label="리워드 안내" {...a11yProps(1)} />
           <Tab label="새소식" {...a11yProps(2)} />
           <Tab label="커뮤니티" {...a11yProps(3)} />
           <Tab label="서포터" {...a11yProps(4)} />
