@@ -43,7 +43,6 @@ const useStyles = makeStyles((theme) => ({
 
 function MainPage4() {
   const classes = useStyles();
-  const text = '안녕?';
   return (
     <span style={mainStyle}>
       <p style={{ fontSize: '28px' }}>

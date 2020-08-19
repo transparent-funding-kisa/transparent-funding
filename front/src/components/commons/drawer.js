@@ -1,29 +1,29 @@
-import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import List from "@material-ui/core/List";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-import Accordion from "./accordion";
-import HomeIcon from "@material-ui/icons/Home";
-import FundingApply1 from "../../views/FundingApply1";
-import FundingApply2 from "../../views/FundingApply2";
-import FundingApply3 from "../../views/FundingApply3";
-import FundingApply4 from "../../views/FundingApply4";
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import List from '@material-ui/core/List';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
+import Accordion from './accordion';
+import HomeIcon from '@material-ui/icons/Home';
+import FundingApply1 from '../../views/FundingApply1';
+import FundingApply2 from '../../views/FundingApply2';
+import FundingApply3 from '../../views/FundingApply3';
+import FundingApply4 from '../../views/FundingApply4';
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
+    display: 'flex',
   },
   appBar: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -56,7 +56,7 @@ export default function PermanentDrawerLeft(props) {
   }
 
   if (inputNum === 0) render = <Accordion></Accordion>;
-  else if (inputNum === 1) render = <FundingApply1></FundingApply1>;
+  // else if (inputNum === 1) render = <FundingApply1></FundingApply1>;
   else if (inputNum === 2) render = <FundingApply2></FundingApply2>;
   else if (inputNum === 3) render = <FundingApply3></FundingApply3>;
   else if (inputNum === 4) render = <FundingApply4></FundingApply4>;
@@ -86,11 +86,12 @@ export default function PermanentDrawerLeft(props) {
           <HomeIcon
             color="primary"
             style={{
-              marginTop: "15px",
-              marginLeft: "15px",
-              cursor: "pointer",
+              marginTop: '15px',
+              marginLeft: '15px',
+              cursor: 'pointer',
               fontSize: 50,
             }}
+            onClick
           ></HomeIcon>
         </a>
 
@@ -98,9 +99,13 @@ export default function PermanentDrawerLeft(props) {
         <div className={classes.toolbar} />
         <Divider />
         <List>
-          {["기본 요건", "기본 정보", "스토리 작성", "리워드 설계"].map(
+          {['기본 요건', '기본 정보', '스토리 작성', '리워드 설계'].map(
             (text, index) => (
-              <ListItemLink href={index + 1}>
+              <ListItemLink
+                onClick={() => {
+                  props.onClick(index + 1);
+                }}
+              >
                 <ListItem button key={text}>
                   <ListItemIcon>
                     {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -108,14 +113,18 @@ export default function PermanentDrawerLeft(props) {
                   <ListItemText primary={text} />
                 </ListItem>
               </ListItemLink>
-            )
+            ),
           )}
         </List>
         <Divider />
         <List>
-          {["위험요인&정책", "메이커 정보", "개발자 정보"].map(
+          {['위험요인&정책', '메이커 정보', '개발자 정보'].map(
             (text, index) => (
-              <ListItemLink href={index + 5}>
+              <ListItemLink
+                onClick={() => {
+                  props.onClick(index + 5);
+                }}
+              >
                 <ListItem button key={text}>
                   <ListItemIcon>
                     {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -123,14 +132,14 @@ export default function PermanentDrawerLeft(props) {
                   <ListItemText primary={text} />
                 </ListItem>
               </ListItemLink>
-            )
+            ),
           )}
         </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Typography paragraph>{render}</Typography>
-        <Typography paragraph></Typography>
+        {/* <Typography paragraph>{render}</Typography>
+        <Typography paragraph></Typography> */}
       </main>
     </div>
   );

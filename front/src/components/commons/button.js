@@ -1,13 +1,13 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import IconButton from "@material-ui/core/IconButton";
-import PhotoCamera from "@material-ui/icons/PhotoCamera";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import IconButton from '@material-ui/core/IconButton';
+import PhotoCamera from '@material-ui/icons/PhotoCamera';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    "& > *": {
+    '& > *': {
       margin: theme.spacing(1),
     },
   },
@@ -17,7 +17,7 @@ export default function ContainedButtons(props) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Button variant="contained" color={props.color} href={props.href}>
+      <Button variant="contained" color={props.color}>
         {props.value}
       </Button>
     </div>
@@ -25,9 +25,9 @@ export default function ContainedButtons(props) {
 }
 
 ContainedButtons.defaultProps = {
-  value: "작성하기",
-  color: "primary",
-  href: "0",
+  value: '작성하기',
+  color: 'primary',
+  // href: "0",
 };
 
 function UploadButtons() {

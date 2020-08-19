@@ -1,23 +1,27 @@
-import React, { useState } from "react";
-import Textfield from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
-import Btn from "../components/commons/button";
-import Modal from "../components/commons/modal";
-import Button from "@material-ui/core/Button";
-import Fade from "@material-ui/core/Fade";
-import FundingApply3Story from "../views/FundingApply3Story";
+import React, { useState } from 'react';
+import Textfield from '@material-ui/core/TextField';
+import Link from '@material-ui/core/Link';
+import Btn from '../components/commons/button';
+import Modal from '../components/commons/modal';
+import Button from '@material-ui/core/Button';
+import Fade from '@material-ui/core/Fade';
+import FundingApply3Story from '../views/FundingApply3Story';
+
+const marginStyle = {
+  marginLeft: '260px',
+};
 
 const FundingApply3 = () => {
   const [open, setOpen] = useState(false);
-  const [display, setDisplay] = useState("none");
+  const [display, setDisplay] = useState('none');
 
   const handlebtnFade = (e) => {
     console.log(open);
     setOpen(!open);
-    setDisplay(open ? "none" : "block");
+    setDisplay(open ? 'none' : 'block');
   };
   return (
-    <>
+    <div style={marginStyle}>
       <h1>스토리 작성</h1>
       <p>
         <b>프로젝트 요약</b>
@@ -59,7 +63,7 @@ const FundingApply3 = () => {
       <Button variant="contained" color="primary">
         저장 하기
       </Button>
-    </>
+    </div>
   );
 };
 

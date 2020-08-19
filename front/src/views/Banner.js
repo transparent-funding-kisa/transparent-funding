@@ -19,14 +19,15 @@ function Banner() {
       <div style={{ position: 'relative' }}>
         <img
           style={imgStyle}
-          src={require('../components/images/shoes.jpg')}
+          src={require('../components/images/shoes1.jpg')}
         ></img>
         <div
           style={{
-            left: '40%',
-            width: '450px',
+            left: '30%',
+            width: '650px',
             bottom: '40%',
-            fontWeight: 'bold',
+            fontWeight: '500',
+            fontSize: '36px',
             position: 'absolute',
             textAlign: 'center',
             color: 'white',

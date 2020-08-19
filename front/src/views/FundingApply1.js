@@ -1,26 +1,30 @@
-import React from "react";
-import Checkbox from "../components/commons/checkBox";
-import TextField from "../components/commons/textField";
-import Textfield from "@material-ui/core/TextField";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import Card from "../components/commons/card";
-import Btn from "../components/commons/button";
+import React from 'react';
+import Checkbox from '../components/commons/checkBox';
+import TextField from '../components/commons/textField';
+import Textfield from '@material-ui/core/TextField';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import Card from '../components/commons/card';
+import Btn from '../components/commons/button';
+
+const marginStyle = {
+  marginLeft: '260px',
+};
 
 const FundingApply1 = () => {
   const label = [
-    "아니요. 다른 곳에서 유통한 적이 없으며 투명 펀딩을 통해 처음 선보이는 제품입니다.",
-    "예, 다른 곳에서 유통한 적이 있습니다. 또는 현재 유통 중입니다.",
+    '아니요. 다른 곳에서 유통한 적이 없으며 투명 펀딩을 통해 처음 선보이는 제품입니다.',
+    '예, 다른 곳에서 유통한 적이 있습니다. 또는 현재 유통 중입니다.',
   ];
 
   const list = [
-    "부가 서비스 이용 시, 추가 수수료가 발생될 수 있습니다.",
-    "리워드가 없는 기부후원 프로젝트의 경우, 수수료가 다르게 적용됩니다.",
-    "자세한 내용은와디즈 수수료 정책을 확인해주세요.",
+    '부가 서비스 이용 시, 추가 수수료가 발생될 수 있습니다.',
+    '리워드가 없는 기부후원 프로젝트의 경우, 수수료가 다르게 적용됩니다.',
+    '자세한 내용은와디즈 수수료 정책을 확인해주세요.',
   ];
 
   return (
-    <>
-      <h1>기본 요건</h1>
+    <div style={marginStyle}>
+      <h1>기본 요건 페이지</h1>
       <p>
         Q1. 리워드가 타 크라우드펀딩사 및 온라인 커머스, 자사 홈페이지 등 다른
         판매처에서 유통된 적이 있거나 현재 유통 중인가요?
@@ -74,7 +78,7 @@ const FundingApply1 = () => {
       </p>
       <Card head="리워드 기본 수수료는 7% (VAT별도)입니다." list={list}></Card>
       <Btn value="저장 하기"></Btn>
-    </>
+    </div>
   );
 };
 
