@@ -24,15 +24,16 @@ export default function FormDialog() {
         추가하기
       </Button>
       <Dialog
+        maxWidth="md"
         open={open}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+        <DialogTitle id="form-dialog-title">리워드 정보 제공 고시</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To subscribe to this website, please enter your email address here.
-            We will send updates occasionally.
+            서포터에게 제공하는 리워드의 종류를 선택하고 해당하는 리워드 정보
+            제공 고시를 입력하세요.
           </DialogContentText>
           <TextField
             autoFocus
