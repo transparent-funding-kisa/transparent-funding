@@ -1,10 +1,10 @@
 // import "react-perfect-scrollbar/dist/css/styles.css";
 import React from 'react';
-import { useRoutes } from 'react-router-dom';
-import { ThemeProvider } from '@material-ui/core';
 import Signup from './views/SignUp';
 import Signin from './views/SignIn';
 import Detail from './views/DetailPage/Detail';
+import Home from './views/Home'
+import MainPage from './views/MainPage'
 // import GlobalStyles from "src/components/GlobalStyles";
 // import "src/mixins/chartjs";
 // import theme from "src/theme";
@@ -24,6 +24,8 @@ const App = () => {
         <Route path="/Detail/:Id" exact component={Detail}></Route>
         <Route path="/Signup" exact component={Signup}></Route>
         <Route path="/Signin" exact component={Signin}></Route>
+        <Route path="/Home" exact component={Home} />
+        <Route path="/" component={MainPage} />
 
         {/* <Route path="/1" component={Test}></Route> */}
       </Switch>
