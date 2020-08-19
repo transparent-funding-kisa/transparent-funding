@@ -1,6 +1,5 @@
 import React from 'react';
 import Sidebar from './Sidebar';
-import styles from './view_css/Detail.css';
 import { makeStyles } from '@material-ui/core/styles';
 //css 적용이 안됩니다..
 
@@ -43,7 +42,7 @@ function MainPage(props) {
     <>
       <span style={mainStyle}>
         <img
-          src={require('../components/images/shoes1.jpg')}
+          src={require('../../components/images/shoes1.jpg')}
           style={imgStyle}
         />
         <p>

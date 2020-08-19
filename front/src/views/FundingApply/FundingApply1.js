@@ -1,10 +1,10 @@
 import React from 'react';
-import Checkbox from '../components/commons/checkBox';
-import TextField from '../components/commons/textField';
+import Checkbox from '../../components/commons/checkBox';
+import TextField from '../../components/commons/textField';
 import Textfield from '@material-ui/core/TextField';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import Card from '../components/commons/card';
-import Btn from '../components/commons/button';
+import Card from '../../components/commons/card';
+import Btn from '../../components/commons/button';
 
 const marginStyle = {
   marginLeft: '260px',

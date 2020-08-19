@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import Card from '../components/commons/card';
+import Card from '../../components/commons/card';
 import Modal from '@material-ui/core/Modal';
 import FormDialog from './FormDialog';
 

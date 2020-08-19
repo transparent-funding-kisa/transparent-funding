@@ -1,8 +1,8 @@
 import React from 'react';
-
 const imgStyle = {
   filter: 'blur(5px)',
   backgroundImage: 'url(../components/images/shoes.jpg)',
+
   height: '247px',
   width: '100%',
   alt: 'Not Found',
@@ -19,7 +19,7 @@ function Banner() {
       <div style={{ position: 'relative' }}>
         <img
           style={imgStyle}
-          src={require('../components/images/shoes1.jpg')}
+          src={require('../../components/images/shoes1.jpg')}
         ></img>
         <div
           style={{

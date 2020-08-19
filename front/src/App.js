@@ -9,8 +9,8 @@ import { ThemeProvider } from '@material-ui/core';
 
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import Test from './views/Test';
-import FundingApply from './views/FundingApply';
-import Detail from './views/Detail';
+import FundingApply from './views/FundingApply/FundingApply';
+import Detail from './views/DetailPage/Detail';
 
 const App = () => {
   // const routing = useRoutes(routes);

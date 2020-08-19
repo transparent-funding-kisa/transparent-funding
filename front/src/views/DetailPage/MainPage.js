@@ -1,6 +1,5 @@
 import React from 'react';
 import Sidebar from './Sidebar';
-import styles from './view_css/Detail.css';
 import { makeStyles } from '@material-ui/core/styles';
 
 import MainPage0 from './MainPage0';

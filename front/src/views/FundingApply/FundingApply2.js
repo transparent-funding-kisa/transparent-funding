@@ -1,9 +1,9 @@
 import React from 'react';
-import TextField from '../components/commons/textField';
+import TextField from '../../components/commons/textField';
 import Textfield from '@material-ui/core/TextField';
-import Btn, { UploadButtons } from '../components/commons/button';
-import Select from '../components/commons/select';
-import Date from '../components/commons/date';
+import Btn, { UploadButtons } from '../../components/commons/button';
+import Select from '../../components/commons/select';
+import Date from '../../components/commons/date';
 
 const marginStyle = {
   marginLeft: '260px',
