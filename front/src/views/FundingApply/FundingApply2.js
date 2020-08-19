@@ -1,13 +1,17 @@
-import React from "react";
-import TextField from "../components/commons/textField";
-import Textfield from "@material-ui/core/TextField";
-import Btn, { UploadButtons } from "../components/commons/button";
-import Select from "../components/commons/select";
-import Date from "../components/commons/date";
+import React from 'react';
+import TextField from '../../components/commons/textField';
+import Textfield from '@material-ui/core/TextField';
+import Btn, { UploadButtons } from '../../components/commons/button';
+import Select from '../../components/commons/select';
+import Date from '../../components/commons/date';
+
+const marginStyle = {
+  marginLeft: '260px',
+};
 
 const FundingApply2 = () => {
   return (
-    <>
+    <div style={marginStyle}>
       <h1>기본 정보 페이지</h1>
       <TextField />
       <Textfield
@@ -37,7 +41,7 @@ const FundingApply2 = () => {
       </p>
       <Date />
       <Btn value="저장하기" />
-    </>
+    </div>
   );
 };
 
