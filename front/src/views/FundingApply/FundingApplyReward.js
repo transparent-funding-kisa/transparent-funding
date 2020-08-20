@@ -3,12 +3,19 @@ import Button from '@material-ui/core/Button';
 import Card from '../../components/commons/card';
 import Modal from '@material-ui/core/Modal';
 import FormDialog from './FormDialog';
+import Fade from '@material-ui/core/Fade';
 
 const marginStyle = {
   marginLeft: '260px',
 };
 
 const FundingApply4 = (props) => {
+  const [category, setCategory] = React.useState('');
+  const [name, setName] = React.useState('');
+  const [material, setMaterial] = React.useState('');
+  const [color, setColor] = React.useState('');
+  const [open, setOpen] = React.useState('none');
+
   const list = [
     '정렬 순서 : 혜택이 높은 순으로 나오도록 정렬 순서를 등록하세요.',
     '제한 수량 : 생산 및 제공할 수 있는 리워드의 총 수량으로 해당 수량이 모두 펀딩되면 더 이상 펀딩 불가합니다.',
@@ -16,13 +23,36 @@ const FundingApply4 = (props) => {
     '옵션 조건 : 옵션(사이즈, 색상 등)이 필요한 경우, 옵션을 추가하세요. 옵션은 선택형과 직접 텍스트를 입력하는 직접 입력형으로 설계 가능합니다.',
   ];
 
+  function test(valueCategory, valueName, valueMaterial, valueColor) {
+    setCategory(valueCategory);
+    setName(valueName);
+    setMaterial(valueMaterial);
+    setColor(valueColor);
+    setOpen('block');
+  }
+
+  const test2 = (e) => {
+    alert(e.target.value);
+    // setCategory(e.target.category);
+    // setName(e.target.name);
+    // setMaterial(e.target.material);
+    // setColor(e.target.color);
+    // setOpen(true);
+  };
+
   return (
     <div style={marginStyle}>
       <h1>리워드 설계</h1>
       <Card head="리워드 설계 조건" list={list}></Card>
       <br></br>
-      <FormDialog></FormDialog>
+      <FormDialog onClick={test}></FormDialog>
+
       <br />
+
+      <Fade in={open} style={{ display: open }}>
+        <div>{category + name + material + color}</div>
+      </Fade>
+
       <Button
         variant="contained"
         color="primary"

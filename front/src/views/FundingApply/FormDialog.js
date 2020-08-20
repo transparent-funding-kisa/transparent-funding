@@ -9,20 +9,30 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Select from '../../components/commons/select';
 import Cookies from 'universal-cookie';
 
-export default function FormDialog() {
+export default function FormDialog(props) {
   const cookies = new Cookies();
+  const [category, setCategory] = React.useState(() => {
+    if (cookies.get('category')) return cookies.get('category');
+    return '';
+  });
+
   const [name, setName] = React.useState(() => {
     if (cookies.get('name')) return cookies.get('name');
-    return ' ';
+    return '';
   });
   const [material, setMaterial] = React.useState(() => {
     if (cookies.get('material')) return cookies.get('material');
-    return ' ';
+    return '';
   });
   const [color, setColor] = React.useState(() => {
     if (cookies.get('color')) return cookies.get('color');
-    return ' ';
+    return '';
   });
+
+  const handleCategory = (e) => {
+    cookies.set('category', e.target.value);
+    setCategory(e.target.value);
+  };
 
   const handleName = (e) => {
     cookies.set('name', e.target.value);
@@ -35,10 +45,11 @@ export default function FormDialog() {
   };
 
   const handleColor = (e) => {
-    cookies.set('name', e.target.value);
+    cookies.set('color', e.target.value);
     setColor(e.target.value);
   };
   const [open, setOpen] = React.useState(false);
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -49,7 +60,7 @@ export default function FormDialog() {
   return (
     <div>
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        추가하기
+        설정 하기
       </Button>
       <Dialog
         maxWidth="md"
@@ -63,10 +74,10 @@ export default function FormDialog() {
             서포터에게 제공하는 리워드의 종류를 선택하고 해당하는 리워드 정보
             제공 고시를 입력하세요.
           </DialogContentText>
-          <Select />
+          <Select onChange={handleCategory} />
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <TextField
-              id="Name"
+              id="name"
               label="품명 및 모델명"
               variant="outlined"
               placeholder="내용 입력"
@@ -76,7 +87,7 @@ export default function FormDialog() {
           </div>
           <div>
             <TextField
-              id="Material"
+              id="material"
               label="제품 소재"
               variant="outlined"
               placeholder="내용 입력"
@@ -86,7 +97,8 @@ export default function FormDialog() {
           </div>
           <div>
             <TextField
-              id="Color"
+              id="color"
+              name="color"
               label="색상"
               variant="outlined"
               placeholder="내용 입력"
@@ -96,10 +108,21 @@ export default function FormDialog() {
           </div>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color="primary" variant="contained">
             취소
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button
+            onClick={() => {
+              props.onClick(category, name, material, color);
+              handleClose();
+            }}
+            // onClick={(e) => {
+            //   props.onClick(e.target.color);
+            //   handleClose();
+            // }}
+            color="primary"
+            variant="contained"
+          >
             등록
           </Button>
         </DialogActions>

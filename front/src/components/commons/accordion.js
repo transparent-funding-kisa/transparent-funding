@@ -231,6 +231,16 @@ export default function ControlledAccordions(props) {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      <br />
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          props.onClick();
+        }}
+      >
+        제출 하기
+      </Button>
     </div>
   );
 }

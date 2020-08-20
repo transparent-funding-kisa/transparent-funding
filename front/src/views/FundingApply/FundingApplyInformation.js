@@ -17,6 +17,11 @@ function valueText(name, money, category, date) {
 
 const FundingApply2 = (props) => {
   const cookies = new Cookies();
+  const [category, setCategory] = React.useState(() => {
+    if (cookies.get('category')) return cookies.get('category');
+    return '';
+  });
+
   const [name, setName] = useState(() => {
     if (cookies.get('name')) return cookies.get('name');
     return '';
@@ -25,6 +30,11 @@ const FundingApply2 = (props) => {
     if (cookies.get('money')) return cookies.get('money');
     return '';
   });
+
+  const handleCategory = (e) => {
+    cookies.set('category', e.target.value);
+    setCategory(e.target.value);
+  };
 
   const handleName = (e) => {
     setName(e.target.value);
@@ -80,7 +90,7 @@ const FundingApply2 = (props) => {
       <p>
         <b>카테고리</b>
       </p>
-      <Select />
+      <Select onChange={handleCategory} />
       <p>
         <b>프로젝트 종료일</b>
       </p>

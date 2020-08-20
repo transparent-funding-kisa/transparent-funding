@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleSelect() {
+export default function SimpleSelect(props) {
   const classes = useStyles();
 
   const cookies = new Cookies();
@@ -28,6 +28,8 @@ export default function SimpleSelect() {
   });
 
   const handleChange = (event) => {
+    var value = event.target.value;
+    props.onChange(event);
     setAge(event.target.value);
     cookies.set('age', event.target.value);
   };
@@ -42,14 +44,18 @@ export default function SimpleSelect() {
           defaultValue="의류"
           value={age}
           onChange={handleChange}
+          // onChange={(e) => {
+          //   handleChange(e);
+
+          //   //handleChange(e);
+          // }}
         >
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={1}></MenuItem>
-          <MenuItem value={2}>의류</MenuItem>
-          <MenuItem value={3}>식품</MenuItem>
-          <MenuItem value={4}>가구</MenuItem>
+          <MenuItem value={'의류'}>의류</MenuItem>
+          <MenuItem value={'식품'}>식품</MenuItem>
+          <MenuItem value={'가구'}>가구</MenuItem>
         </Select>
       </FormControl>
     </div>
