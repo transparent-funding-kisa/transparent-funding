@@ -38,35 +38,37 @@ export default function FormDialog() {
             제공 고시를 입력하세요.
           </DialogContentText>
           <Select />
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
-            fullWidth
-          />
-          {/* <Text></Text> */}
-          품명 및 모델명 <br />
-          <TextField
-            id="outlined-basic"
-            label="Outlined"
-            variant="outlined"
-            label="test"
-          />
-          품명 및 모델명 <br />
-          <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-          품명 및 모델명 <br />
-          <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-          품명 및 모델명 <br />
-          <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <TextField
+              id="Name"
+              label="품명 및 모델명"
+              variant="outlined"
+              placeholder="내용 입력"
+            />
+          </div>
+          <div>
+            <TextField
+              id="Material"
+              label="제품 소재"
+              variant="outlined"
+              placeholder="내용 입력"
+            />
+          </div>
+          <div>
+            <TextField
+              id="Color"
+              label="색상"
+              variant="outlined"
+              placeholder="내용 입력"
+            />
+          </div>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Cancel
+            취소
           </Button>
           <Button onClick={handleClose} color="primary">
-            Subscribe
+            등록
           </Button>
         </DialogActions>
       </Dialog>
