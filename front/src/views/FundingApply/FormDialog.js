@@ -1,21 +1,47 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import Text from '../../components/commons/textField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Select from '../../components/commons/select';
+import Cookies from 'universal-cookie';
 
 export default function FormDialog() {
-  const [open, setOpen] = React.useState(false);
+  const cookies = new Cookies();
+  const [name, setName] = React.useState(() => {
+    if (cookies.get('name')) return cookies.get('name');
+    return ' ';
+  });
+  const [material, setMaterial] = React.useState(() => {
+    if (cookies.get('material')) return cookies.get('material');
+    return ' ';
+  });
+  const [color, setColor] = React.useState(() => {
+    if (cookies.get('color')) return cookies.get('color');
+    return ' ';
+  });
 
+  const handleName = (e) => {
+    cookies.set('name', e.target.value);
+    setName(e.target.value);
+  };
+
+  const handleMaterial = (e) => {
+    cookies.set('material', e.target.value);
+    setMaterial(e.target.value);
+  };
+
+  const handleColor = (e) => {
+    cookies.set('name', e.target.value);
+    setColor(e.target.value);
+  };
+  const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
@@ -44,6 +70,8 @@ export default function FormDialog() {
               label="품명 및 모델명"
               variant="outlined"
               placeholder="내용 입력"
+              onChange={handleName}
+              value={name}
             />
           </div>
           <div>
@@ -52,6 +80,8 @@ export default function FormDialog() {
               label="제품 소재"
               variant="outlined"
               placeholder="내용 입력"
+              onChange={handleMaterial}
+              value={material}
             />
           </div>
           <div>
@@ -60,6 +90,8 @@ export default function FormDialog() {
               label="색상"
               variant="outlined"
               placeholder="내용 입력"
+              onChange={handleColor}
+              value={color}
             />
           </div>
         </DialogContent>

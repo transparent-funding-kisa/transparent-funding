@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import IconButton from '@material-ui/core/IconButton';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
+import Cookies from 'universal-cookie';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ContainedButtons(props) {
   const classes = useStyles();
+
   return (
     <div className={classes.root}>
       <Button variant="contained" color={props.color}>
@@ -31,7 +33,19 @@ ContainedButtons.defaultProps = {
 };
 
 function UploadButtons() {
+  const cookies = new Cookies();
   const classes = useStyles();
+
+  const [file, setFile] = React.useState(() => {
+    if (cookies.get('file')) return cookies.get('file');
+    return '';
+  });
+
+  const handleUpload = (e) => {
+    setFile(e.target.value);
+    cookies.set('file', e.target.value);
+    console.log(e.target.value);
+  };
 
   return (
     <div className={classes.root}>
@@ -50,6 +64,7 @@ function UploadButtons() {
         id="contained-button-file"
         multiple
         type="file"
+        onChange={handleUpload}
       />
     </div>
 

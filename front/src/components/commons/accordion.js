@@ -46,7 +46,7 @@ export default function ControlledAccordions(props) {
           <Typography className={classes.heading}>
             <b>기본 요건</b>
           </Typography>
-          <Typography className={classes.secondaryHeading}>작성 전</Typography>
+          <Typography className={classes.secondaryHeading}>개발 중</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -173,7 +173,7 @@ export default function ControlledAccordions(props) {
           <Typography className={classes.heading}>
             <b>위험요인 및 정책</b>
           </Typography>
-          <Typography className={classes.secondaryHeading}>작성 전</Typography>
+          <Typography className={classes.secondaryHeading}>개발 중</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -206,7 +206,7 @@ export default function ControlledAccordions(props) {
           <Typography className={classes.heading}>
             <b>메이커 정보</b>
           </Typography>
-          <Typography className={classes.secondaryHeading}>작성 전</Typography>
+          <Typography className={classes.secondaryHeading}>개발 중</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>

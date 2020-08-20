@@ -5,6 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Cookies from 'universal-cookie';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -18,10 +19,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleSelect() {
   const classes = useStyles();
-  const [age, setAge] = React.useState('');
+
+  const cookies = new Cookies();
+
+  const [age, setAge] = React.useState(() => {
+    if (cookies.get('age')) return cookies.get('age');
+    return ' ';
+  });
 
   const handleChange = (event) => {
     setAge(event.target.value);
+    cookies.set('age', event.target.value);
   };
 
   return (
@@ -31,6 +39,7 @@ export default function SimpleSelect() {
         <Select
           labelId="demo-simple-select-helper-label"
           id="demo-simple-select-helper"
+          defaultValue="의류"
           value={age}
           onChange={handleChange}
         >

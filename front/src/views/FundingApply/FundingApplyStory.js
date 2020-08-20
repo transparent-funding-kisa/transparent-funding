@@ -5,20 +5,31 @@ import Btn from '../../components/commons/button';
 import Modal from '../../components/commons/modal';
 import Button from '@material-ui/core/Button';
 import Fade from '@material-ui/core/Fade';
-import FundingApply3Story from './FundingApplyStoryFade';
+import FundingApplyStoryFade from './FundingApplyStoryFade';
+import Cookies from 'universal-cookie';
 
 const marginStyle = {
   marginLeft: '260px',
 };
 
 const FundingApply3 = () => {
+  const cookies = new Cookies();
+
   const [open, setOpen] = useState(false);
   const [display, setDisplay] = useState('none');
+  const [projectSummary, setProjectSummary] = useState(() => {
+    if (cookies.get('summary')) return cookies.get('summary');
+    return '';
+  });
 
   const handlebtnFade = (e) => {
     console.log(open);
     setOpen(!open);
     setDisplay(open ? 'none' : 'block');
+  };
+  const handleSummary = (e) => {
+    setProjectSummary(e.target.value);
+    cookies.set('summary', e.target.value);
   };
   return (
     <div style={marginStyle}>
@@ -39,6 +50,8 @@ const FundingApply3 = () => {
           shrink: true,
         }}
         variant="outlined"
+        onChange={handleSummary}
+        value={projectSummary}
       />
 
       <p>
@@ -55,7 +68,7 @@ const FundingApply3 = () => {
 
       <Fade in={open} style={{ display: display }}>
         <div>
-          <FundingApply3Story></FundingApply3Story>
+          <FundingApplyStoryFade></FundingApplyStoryFade>
         </div>
       </Fade>
       <br></br>
