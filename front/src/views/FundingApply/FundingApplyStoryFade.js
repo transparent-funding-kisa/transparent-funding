@@ -25,7 +25,7 @@ const FundingApply3Story = () => {
         id="outlined-full-width"
         style={{ margin: 8 }}
         placeholder="내용을 입력하세요."
-        helperText="1000자 남음"
+        helperText={1000 - story.length + '자 남음'}
         size="medium"
         fullWidth
         margin="normal"

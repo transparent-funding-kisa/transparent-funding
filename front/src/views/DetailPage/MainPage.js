@@ -2,10 +2,10 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import { makeStyles } from '@material-ui/core/styles';
 
-import MainPage0 from './MainPageStory';
-import MainPage1 from './MainPageReward';
-import MainPage2 from './MainPageNews';
-import MainPage3 from './MainPageCommunity';
+import MainPageStory from './MainPageStory';
+import MainPageReward from './MainPageReward';
+import MainPageNews from './MainPageNews';
+import MainPageCommunity from './MainPageCommunity';
 import MainPage4 from './MainPage4';
 import Lab from './Lab';
 
@@ -30,13 +30,13 @@ function MainPage(props) {
   // );
   switch (Idx) {
     case 0:
-      return <MainPage0 />;
+      return <MainPageStory />;
     case 1:
-      return <MainPage1 />;
+      return <MainPageReward />;
     case 2:
-      return <MainPage2 />;
+      return <MainPageNews />;
     case 3:
-      return <MainPage3 />;
+      return <MainPageCommunity />;
     case 4:
       return <Lab />;
     default:

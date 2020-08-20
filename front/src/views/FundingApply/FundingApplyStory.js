@@ -12,7 +12,7 @@ const marginStyle = {
   marginLeft: '260px',
 };
 
-const FundingApply3 = () => {
+const FundingApply3 = (props) => {
   const cookies = new Cookies();
 
   const [open, setOpen] = useState(false);
@@ -42,7 +42,7 @@ const FundingApply3 = () => {
         label="프로젝트 페이지 상단 및 지지서명 시 노출됩니다."
         style={{ margin: 8 }}
         placeholder="내용"
-        helperText="100자 남음"
+        helperText={100 - projectSummary.length + '자 남음'}
         size="medium"
         fullWidth
         margin="normal"
@@ -73,7 +73,7 @@ const FundingApply3 = () => {
       </Fade>
       <br></br>
       <br></br>
-      <Button variant="contained" color="primary">
+      <Button variant="contained" color="primary" onClick={props.onClick}>
         저장 하기
       </Button>
     </div>

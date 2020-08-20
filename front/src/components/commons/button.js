@@ -33,19 +33,7 @@ ContainedButtons.defaultProps = {
 };
 
 function UploadButtons() {
-  const cookies = new Cookies();
   const classes = useStyles();
-
-  const [file, setFile] = React.useState(() => {
-    if (cookies.get('file')) return cookies.get('file');
-    return '';
-  });
-
-  const handleUpload = (e) => {
-    setFile(e.target.value);
-    cookies.set('file', e.target.value);
-    console.log(e.target.value);
-  };
 
   return (
     <div className={classes.root}>
@@ -64,7 +52,6 @@ function UploadButtons() {
         id="contained-button-file"
         multiple
         type="file"
-        onChange={handleUpload}
       />
     </div>
 

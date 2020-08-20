@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
 export default function ControlledAccordions(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  let infomation = props.info ? '작성 중' : '작성 완료';
+  let story = props.story ? '작성 중' : '작성 완료';
+  let reward = props.reward ? '작성 중' : '작성 완료';
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -78,7 +81,9 @@ export default function ControlledAccordions(props) {
           <Typography className={classes.heading}>
             <b>기본 정보</b>
           </Typography>
-          <Typography className={classes.secondaryHeading}>작성 전</Typography>
+          <Typography className={classes.secondaryHeading}>
+            {infomation}
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -108,7 +113,7 @@ export default function ControlledAccordions(props) {
           <Typography className={classes.heading}>
             <b>스토리 작성</b>
           </Typography>
-          <Typography className={classes.secondaryHeading}>작성 전</Typography>
+          <Typography className={classes.secondaryHeading}>{story}</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -140,7 +145,7 @@ export default function ControlledAccordions(props) {
           <Typography className={classes.heading}>
             <b>리워드 설계</b>
           </Typography>
-          <Typography className={classes.secondaryHeading}>작성 전</Typography>
+          <Typography className={classes.secondaryHeading}>{reward}</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>

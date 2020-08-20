@@ -4,30 +4,34 @@ import Btn, { UploadButtons } from '../../components/commons/button';
 import Select from '../../components/commons/select';
 import Date from '../../components/commons/date';
 import Cookies from 'universal-cookie';
+import Button from '@material-ui/core/Button';
+import FundingApply from './FundingApply';
 
 const marginStyle = {
   marginLeft: '260px',
 };
 
-const FundingApply2 = () => {
+function valueText(name, money, category, date) {
+  return alert('test');
+}
+
+const FundingApply2 = (props) => {
   const cookies = new Cookies();
   const [name, setName] = useState(() => {
     if (cookies.get('name')) return cookies.get('name');
-    return ' ';
+    return '';
   });
   const [money, setMoney] = useState(() => {
     if (cookies.get('money')) return cookies.get('money');
-    return ' ';
+    return '';
   });
 
   const handleName = (e) => {
-    console.log('hi!' + e.target.value);
     setName(e.target.value);
     cookies.set('name', e.target.value);
   };
 
   const handleMoney = (e) => {
-    console.log('hi!' + e.target.value);
     setMoney(e.target.value);
     cookies.set('money', e.target.value);
   };
@@ -41,7 +45,7 @@ const FundingApply2 = () => {
         label="프로젝트 제목"
         style={{ margin: 8 }}
         placeholder="제목 입력"
-        helperText="40자 남음"
+        helperText={40 - name.length + '자 남음'}
         size="medium"
         fullWidth
         margin="normal"
@@ -81,7 +85,16 @@ const FundingApply2 = () => {
         <b>프로젝트 종료일</b>
       </p>
       <Date />
-      <Btn value="저장하기" />
+      <br />
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          props.onClick();
+        }}
+      >
+        저장 하기
+      </Button>
     </div>
   );
 };

@@ -3,13 +3,17 @@ import Card from '@material-ui/core/Card';
 import CardIcon from '../../components/commons/card';
 import Accordion from '../../components/commons/accordion';
 import Drawer from '../../components/commons/drawer';
-import FundingApply1 from './FundingApplyRequirements';
-import FundingApply2 from './FundingApplyInformation';
-import FundingApply3 from './FundingApplyStory';
-import FundingApply4 from './FundingApplyReward';
+import FundingApplyRequirements from './FundingApplyRequirements';
+import FundingApplyInformation from './FundingApplyInformation';
+import FundingApplyStory from './FundingApplyStory';
+import FundingApplyReward from './FundingApplyReward';
 import Empty from '../Empty';
 const FundingApply = (props) => {
   const [idx, setIdx] = React.useState(0);
+  const [infomation, setInfomation] = React.useState(false);
+  const [story, setStory] = React.useState(false);
+  const [reward, setReward] = React.useState(false);
+
   const Idx = parseInt(idx);
 
   function handleClick(value) {
@@ -17,18 +21,41 @@ const FundingApply = (props) => {
     console.log(value);
   }
 
+  function handleInfomation() {
+    setIdx(0);
+    setInfomation(!infomation);
+    console.log(infomation);
+  }
+
+  function handleStory() {
+    setIdx(0);
+    setStory(!story);
+  }
+
+  function handleReward() {
+    setIdx(0);
+    setReward(!reward);
+  }
+
   function renderSwitch(value) {
     switch (value) {
       case 0:
-        return <Accordion onClick={handleClick} />;
+        return (
+          <Accordion
+            onClick={handleClick}
+            info={infomation}
+            story={story}
+            reward={reward}
+          />
+        );
       case 1:
-        return <FundingApply1 />;
+        return <FundingApplyRequirements />;
       case 2:
-        return <FundingApply2 />;
+        return <FundingApplyInformation onClick={handleInfomation} />;
       case 3:
-        return <FundingApply3 />;
+        return <FundingApplyStory onClick={handleStory} />;
       case 4:
-        return <FundingApply4 />;
+        return <FundingApplyReward onClick={handleReward} />;
       case 5:
         return <Empty />;
       case 6:

@@ -8,7 +8,7 @@ const marginStyle = {
   marginLeft: '260px',
 };
 
-const FundingApply4 = () => {
+const FundingApply4 = (props) => {
   const list = [
     '정렬 순서 : 혜택이 높은 순으로 나오도록 정렬 순서를 등록하세요.',
     '제한 수량 : 생산 및 제공할 수 있는 리워드의 총 수량으로 해당 수량이 모두 펀딩되면 더 이상 펀딩 불가합니다.',
@@ -22,10 +22,16 @@ const FundingApply4 = () => {
       <Card head="리워드 설계 조건" list={list}></Card>
       <br></br>
       <FormDialog></FormDialog>
-
-      {/* <Button variant="contained" color="primary">
-        추가 하기
-      </Button> */}
+      <br />
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          props.onClick();
+        }}
+      >
+        저장 하기
+      </Button>
     </div>
   );
 };
