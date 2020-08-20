@@ -3,10 +3,10 @@ import Card from '@material-ui/core/Card';
 import CardIcon from '../../components/commons/card';
 import Accordion from '../../components/commons/accordion';
 import Drawer from '../../components/commons/drawer';
-import FundingApply1 from './FundingApply1';
-import FundingApply2 from './FundingApply2';
-import FundingApply3 from './FundingApply3';
-import FundingApply4 from './FundingApply4';
+import FundingApply1 from './FundingApplyRequirements';
+import FundingApply2 from './FundingApplyInformation';
+import FundingApply3 from './FundingApplyStory';
+import FundingApply4 from './FundingApplyReward';
 import Empty from '../Empty';
 const FundingApply = (props) => {
   const [idx, setIdx] = React.useState(0);

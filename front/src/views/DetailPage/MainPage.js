@@ -2,10 +2,10 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import { makeStyles } from '@material-ui/core/styles';
 
-import MainPage0 from './MainPage0';
-import MainPage1 from './MainPage1';
-import MainPage2 from './MainPage2';
-import MainPage3 from './MainPage3';
+import MainPage0 from './MainPageStory';
+import MainPage1 from './MainPageReward';
+import MainPage2 from './MainPageNews';
+import MainPage3 from './MainPageCommunity';
 import MainPage4 from './MainPage4';
 import Lab from './Lab';
 

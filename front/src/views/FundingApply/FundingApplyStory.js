@@ -5,7 +5,7 @@ import Btn from '../../components/commons/button';
 import Modal from '../../components/commons/modal';
 import Button from '@material-ui/core/Button';
 import Fade from '@material-ui/core/Fade';
-import FundingApply3Story from '../../views/FundingApply/FundingApply3Story';
+import FundingApply3Story from './FundingApplyStoryFade';
 
 const marginStyle = {
   marginLeft: '260px',
