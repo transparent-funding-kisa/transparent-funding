@@ -20,6 +20,10 @@ module.exports = (sequelize, Sequelize) => {
       goal: { //목표금액
         type: Sequelize.DOUBLE, 
         allowNull : true
+      },
+      imageUrl: {
+        type: Sequelize.STRING,
+        allowNull : true
       }
     });
   
