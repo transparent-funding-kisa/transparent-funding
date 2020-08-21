@@ -87,6 +87,24 @@ const FundingApply2 = (props) => {
         <b>대표 이미지</b>
       </p>
       <UploadButtons />
+
+      <TextField
+        id="outlined-full-width"
+        label="url"
+        style={{ margin: 8 }}
+        helperText="3MB 이하의 JPEG, PNG 파일 사이즈 : 1200X675 픽셀 이상 텍스트 및 로고
+        삽입 금지"
+        size="medium"
+        placeholder="예시 : https://ibb.co/0D3K4Mf"
+        // fullWidth
+        margin="normal"
+        InputLabelProps={{
+          shrink: true,
+        }}
+        variant="outlined"
+        defaultValue={money}
+        onChange={handleMoney}
+      />
       <p>
         <b>카테고리</b>
       </p>

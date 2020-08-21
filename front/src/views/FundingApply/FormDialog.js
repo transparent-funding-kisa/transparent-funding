@@ -113,6 +113,9 @@ export default function FormDialog(props) {
           </Button>
           <Button
             onClick={() => {
+              //1. 화살표함수가 아닌 상위 컴포넌트의 함수를 호출할 때, 인자를 넘기는 방법
+              //2. e.target.value가 뭔지 모르겠다.
+              //3. 화살표함수에서 ()안에 무엇이 들어가나요..?
               props.onClick(category, name, material, color);
               handleClose();
             }}

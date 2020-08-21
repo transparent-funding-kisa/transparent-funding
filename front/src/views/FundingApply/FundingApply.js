@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardIcon from '../../components/commons/card';
-import Accordion from '../../components/commons/accordion';
+import FundingApplyMain from './FundingApplyMain';
 import Drawer from '../../components/commons/drawer';
 import FundingApplyRequirements from './FundingApplyRequirements';
 import FundingApplyInformation from './FundingApplyInformation';
@@ -42,7 +42,7 @@ const FundingApply = (props) => {
     switch (value) {
       case 0:
         return (
-          <Accordion
+          <FundingApplyMain
             onClick={handleClick}
             info={infomation}
             story={story}

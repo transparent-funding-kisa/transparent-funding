@@ -5,7 +5,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Btn from '../commons/button';
+import Btn from '../../components/commons/button';
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
@@ -27,9 +27,9 @@ const useStyles = makeStyles((theme) => ({
 export default function ControlledAccordions(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-  let infomation = props.info ? '작성 중' : '작성 완료';
-  let story = props.story ? '작성 중' : '작성 완료';
-  let reward = props.reward ? '작성 중' : '작성 완료';
+  let infomation = props.info ? '작성 완료' : '작성 중';
+  let story = props.story ? '작성 완료' : '작성 중';
+  let reward = props.reward ? '작성 완료' : '작성 중';
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -232,15 +232,17 @@ export default function ControlledAccordions(props) {
         </AccordionDetails>
       </Accordion>
       <br />
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => {
-          props.onClick();
-        }}
-      >
-        제출 하기
-      </Button>
+      <a href="/">
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => {
+            props.onClick();
+          }}
+        >
+          제출 하기
+        </Button>
+      </a>
     </div>
   );
 }
