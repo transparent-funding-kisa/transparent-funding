@@ -1,53 +1,31 @@
-import React from 'react';
-import DiaLog from '@material-ui/core/Dialog';
-import DiaLogActions from '@material-ui/core/DialogActions';
+import MypageBar from "../components/commons/MypageBar"
+import React from "react";
+import FundProduct from "../components/commons/ProductCard"
+import { Grid} from "@material-ui/core";
+import Divider from '@material-ui/core/Divider';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import DialogContent from '@material-ui/core/DialogContent';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import {withStyles} from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import { AppBar } from '@material-ui/core';
-import { Toolbar } from '@material-ui/core';
-import { IconButton } from '@material-ui/core';
-import { MenuIcon } from '@material-ui/core';
-import { Typography } from '@material-ui/core';
 
 
- 
-import {Router,Route,IndexRoute,Link} from 'react-router';
+const Mypage = () => {
+    return (
+        <>
+        <MypageBar></MypageBar>
+        <DialogTitle Strong >Mypage</DialogTitle>
+        <Grid container spacing={3}>
+        <Grid item xs={9}>
+            <FundProduct ></FundProduct>
+        </Grid>
+        <Divider orientation="vertical" flexItem />
+        <Grid item xs={2}>
+           
 
+          <DialogTitle>___ 님의 보유액은 : </DialogTitle> <br></br>
+          <DialogTitle> ______point 입니다. </DialogTitle>
+        </Grid>
+        </Grid>
 
-const headers = {withCredentials:true}
-
-const styles = theme =>({
-    hidden :{
-        display:'none'
-    }
-})
-
-
-
-class Mypage extends React.Component{
-
-    render(){
-    
-        const {classes}= this.props;
-        return(
-            <AppBar position="static">
-            <Toolbar>
-            <Typography variant="h6" color="inherit">
-      Mypage
-    </Typography>
-    </Toolbar>
-              
-   </AppBar>
-         
-            
-      
-       
-      
-       )
-    }
+        </>
+    )
 }
+
 export default Mypage;
