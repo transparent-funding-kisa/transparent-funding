@@ -117,8 +117,8 @@ const FundingApply2 = (props) => {
       <Button
         variant="contained"
         color="primary"
-        onClick={() => {
-          props.onClick();
+        onClick={(e) => {
+          props.onClick(e);
         }}
       >
         저장 하기

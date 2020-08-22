@@ -9,11 +9,13 @@ import FundingApplyStory from './FundingApplyStory';
 import FundingApplyReward from './FundingApplyReward';
 import Button from '@material-ui/core/Button';
 import Empty from '../Empty';
+
 const FundingApply = (props) => {
   const [idx, setIdx] = React.useState(0);
   const [infomation, setInfomation] = React.useState(false);
   const [story, setStory] = React.useState(false);
   const [reward, setReward] = React.useState(false);
+  const [infomationName, setInfomationName] = React.useState('');
 
   const Idx = parseInt(idx);
 
@@ -22,10 +24,18 @@ const FundingApply = (props) => {
     console.log(value);
   }
 
-  function handleInfomation() {
+  const handleInfomation = (e) => {
+    setIdx(0);
+    console.log(e.target.value);
+  };
+
+  function handleInfomation2(name) {
     setIdx(0);
     setInfomation(!infomation);
-    console.log(infomation);
+    setInfomationName(name);
+    console.log(name);
+    console.log(infomationName);
+    console.log(name.target);
   }
 
   function handleStory() {
