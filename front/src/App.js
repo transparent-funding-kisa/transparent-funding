@@ -5,6 +5,13 @@ import Signin from './views/SignIn';
 import Detail from './views/DetailPage/Detail';
 import Home from './views/Home'
 import MainPage from './views/MainPage'
+import Mypage from './views/Mypage';
+import Invest from './views/Invest';
+
+
+
+
+
 // import GlobalStyles from "src/components/GlobalStyles";
 // import "src/mixins/chartjs";
 // import theme from "src/theme";
@@ -26,7 +33,8 @@ const App = () => {
         <Route path="/signin" exact component={Signin}></Route>
         <Route path="/home" exact component={Home} />
         <Route path="/main" component={MainPage} />
-
+        <Route path="/mypage" exact component={Mypage}></Route>
+        <Route path="/invest" exact component={Invest}></Route>
         {/* <Route path="/1" component={Test}></Route> */}
       </Switch>
     </BrowserRouter>
