@@ -1,24 +1,40 @@
 import React, { useState } from 'react';
 import Textfield from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
-import Btn from '../../components/commons/button';
 import Modal from '../../components/commons/modal';
 import Button from '@material-ui/core/Button';
 import Fade from '@material-ui/core/Fade';
-import FundingApply3Story from '../../views/FundingApply/FundingApply3Story';
+import FundingApplyStoryFade from './FundingApplyStoryFade';
+import Cookies from 'universal-cookie';
+import useCookies from '../../hooks/useCookies';
 
 const marginStyle = {
   marginLeft: '260px',
 };
 
-const FundingApply3 = () => {
+const FundingApply3 = (props) => {
+  const cookies = new Cookies();
+
   const [open, setOpen] = useState(false);
   const [display, setDisplay] = useState('none');
+  const [projectSummary, setProjectSummary] = useState(() => {
+    if (cookies.get('summary')) return cookies.get('summary');
+    return '';
+  });
+  const [story, setStory] = useCookies('story');
+
+  const handleStory = (story) => {
+    console.log(story);
+    setStory(story);
+  };
 
   const handlebtnFade = (e) => {
-    console.log(open);
     setOpen(!open);
     setDisplay(open ? 'none' : 'block');
+  };
+
+  const handleSummary = (e) => {
+    setProjectSummary(e.target.value);
+    cookies.set('summary', e.target.value);
   };
   return (
     <div style={marginStyle}>
@@ -31,7 +47,7 @@ const FundingApply3 = () => {
         label="프로젝트 페이지 상단 및 지지서명 시 노출됩니다."
         style={{ margin: 8 }}
         placeholder="내용"
-        helperText="100자 남음"
+        helperText={100 - projectSummary.length + '자 남음'}
         size="medium"
         fullWidth
         margin="normal"
@@ -39,6 +55,8 @@ const FundingApply3 = () => {
           shrink: true,
         }}
         variant="outlined"
+        onChange={handleSummary}
+        value={projectSummary}
       />
 
       <p>
@@ -55,12 +73,20 @@ const FundingApply3 = () => {
 
       <Fade in={open} style={{ display: display }}>
         <div>
-          <FundingApply3Story></FundingApply3Story>
+          <FundingApplyStoryFade
+            changeValue={handleStory}
+          ></FundingApplyStoryFade>
         </div>
       </Fade>
       <br></br>
       <br></br>
-      <Button variant="contained" color="primary">
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          props.onClick(projectSummary, story);
+        }}
+      >
         저장 하기
       </Button>
     </div>

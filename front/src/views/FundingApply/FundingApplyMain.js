@@ -5,8 +5,8 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Btn from '../commons/button';
 import Button from '@material-ui/core/Button';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
 export default function ControlledAccordions(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  let infomation = props.info ? '작성 완료' : '작성 중';
+  let story = props.story ? '작성 완료' : '작성 중';
+  let reward = props.reward ? '작성 완료' : '작성 중';
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -46,7 +49,7 @@ export default function ControlledAccordions(props) {
           <Typography className={classes.heading}>
             <b>기본 요건</b>
           </Typography>
-          <Typography className={classes.secondaryHeading}>작성 전</Typography>
+          <Typography className={classes.secondaryHeading}>개발 중</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -78,7 +81,9 @@ export default function ControlledAccordions(props) {
           <Typography className={classes.heading}>
             <b>기본 정보</b>
           </Typography>
-          <Typography className={classes.secondaryHeading}>작성 전</Typography>
+          <Typography className={classes.secondaryHeading}>
+            {infomation}
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -108,7 +113,7 @@ export default function ControlledAccordions(props) {
           <Typography className={classes.heading}>
             <b>스토리 작성</b>
           </Typography>
-          <Typography className={classes.secondaryHeading}>작성 전</Typography>
+          <Typography className={classes.secondaryHeading}>{story}</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -140,7 +145,7 @@ export default function ControlledAccordions(props) {
           <Typography className={classes.heading}>
             <b>리워드 설계</b>
           </Typography>
-          <Typography className={classes.secondaryHeading}>작성 전</Typography>
+          <Typography className={classes.secondaryHeading}>{reward}</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -173,7 +178,7 @@ export default function ControlledAccordions(props) {
           <Typography className={classes.heading}>
             <b>위험요인 및 정책</b>
           </Typography>
-          <Typography className={classes.secondaryHeading}>작성 전</Typography>
+          <Typography className={classes.secondaryHeading}>개발 중</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -206,7 +211,7 @@ export default function ControlledAccordions(props) {
           <Typography className={classes.heading}>
             <b>메이커 정보</b>
           </Typography>
-          <Typography className={classes.secondaryHeading}>작성 전</Typography>
+          <Typography className={classes.secondaryHeading}>개발 중</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -226,6 +231,24 @@ export default function ControlledAccordions(props) {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      <br />
+      <a href="/">
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => {
+            props.onClick();
+          }}
+          onClick={() => {
+            console.log('test');
+            axios.post('http://localhost:8080/api/newproject').then((res) => {
+              console.log('test');
+            });
+          }}
+        >
+          제출 하기
+        </Button>
+      </a>
     </div>
   );
 }

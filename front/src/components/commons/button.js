@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import IconButton from '@material-ui/core/IconButton';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
+import Cookies from 'universal-cookie';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ContainedButtons(props) {
   const classes = useStyles();
+
   return (
     <div className={classes.root}>
       <Button variant="contained" color={props.color}>

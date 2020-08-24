@@ -1,6 +1,18 @@
 import React from 'react';
 import Textfield from '@material-ui/core/TextField';
-const FundingApply3Story = () => {
+import Cookies from 'universal-cookie';
+const FundingApply3Story = (props) => {
+  const cookies = new Cookies();
+  const [story, setStory] = React.useState(() => {
+    if (cookies.get('story')) return cookies.get('story');
+    return ' ';
+  });
+
+  const handleStory = (e) => {
+    cookies.set('story', e.target.value);
+    setStory(e.target.value);
+    props.changeValue(e.target.value);
+  };
   return (
     <>
       <h1>프로젝트 스토리</h1>
@@ -14,7 +26,7 @@ const FundingApply3Story = () => {
         id="outlined-full-width"
         style={{ margin: 8 }}
         placeholder="내용을 입력하세요."
-        helperText="1000자 남음"
+        helperText={1000 - story.length + '자 남음'}
         size="medium"
         fullWidth
         margin="normal"
@@ -22,6 +34,8 @@ const FundingApply3Story = () => {
           shrink: true,
         }}
         variant="outlined"
+        onChange={handleStory}
+        value={story}
       />
     </>
   );
