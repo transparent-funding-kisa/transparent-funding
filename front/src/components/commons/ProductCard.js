@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
+import {Link} from "react-router-dom"
 
 
 //const cards = [1, 2, 3, 4, 5, 6];
@@ -61,6 +62,7 @@ const dataList = [
 }));
 
 
+
 export default function FundProduct() {
   const classes = useStyles();
   return(
@@ -70,6 +72,7 @@ export default function FundProduct() {
 <Grid container spacing={3}>
   {dataList.map((data, index) => (
     <Grid item key={index} xs={12} sm={6} md={4} >
+    <Link to="//Detail/:1">
       <Card className={classes.card}>
         <CardMedia
           className={classes.cardMedia}
@@ -94,6 +97,7 @@ export default function FundProduct() {
           </Button>
         </CardActions>
       </Card>
+      </Link>
     </Grid>
 
   ))}

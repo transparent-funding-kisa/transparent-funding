@@ -1,5 +1,5 @@
-import PrimarySearchAppBar from "../components/commons/Menu"
 import React from "react";
+import PrimarySearchAppBar from "../components/commons/Menu"
 import FundProduct from "../components/commons/ProductCard"
 import MainPost,{mainFeaturedPost} from "../components/commons/MainPost"
 import Sidebar, {ranking} from "../components/commons/Sidebar"
@@ -11,7 +11,6 @@ const MainPage = () => {
     return (
         <>
         <PrimarySearchAppBar></PrimarySearchAppBar>
-        
         <MainPost post={mainFeaturedPost}></MainPost>
         <Grid container spacing={3}>
         <Grid item xs={9}>
