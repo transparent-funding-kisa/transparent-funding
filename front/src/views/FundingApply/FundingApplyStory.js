@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import Textfield from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
-import Btn from '../../components/commons/button';
 import Modal from '../../components/commons/modal';
 import Button from '@material-ui/core/Button';
 import Fade from '@material-ui/core/Fade';
@@ -16,7 +14,6 @@ const marginStyle = {
 const FundingApply3 = (props) => {
   const cookies = new Cookies();
 
-  // const [open, setOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [display, setDisplay] = useState('none');
   const [projectSummary, setProjectSummary] = useState(() => {

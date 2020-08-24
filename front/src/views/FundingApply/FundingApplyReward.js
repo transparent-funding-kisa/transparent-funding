@@ -12,12 +12,6 @@ const marginStyle = {
 };
 
 const FundingApply4 = (props) => {
-  // const [category, setCategory] = React.useState('');
-  // const [name, setName] = React.useState('');
-  // const [material, setMaterial] = React.useState('');
-  // const [color, setColor] = React.useState('');
-  // const [open, setOpen] = React.useState('none');
-
   const [category, setCategory] = useCookies('category');
   const [rewardName, setRewardName] = useCookies('rewardName');
   const [material, setMaterial] = useCookies('material');

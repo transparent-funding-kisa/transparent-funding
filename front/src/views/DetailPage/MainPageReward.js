@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Table from './DetailRewardTable';
 const mainStyle = {
   border: '15px',
   float: 'left',
@@ -9,10 +9,13 @@ const mainStyle = {
   width: '700px',
 
   marginLeft: '200px',
-  // alignItems: 'center',
 };
 function MainPage1() {
-  return <span style={mainStyle}>리워드 안내 페이지</span>;
+  return (
+    <span style={mainStyle}>
+      <Table name="나이키 신발" material="가죽" color="black"></Table>
+    </span>
+  );
 }
 
 export default MainPage1;

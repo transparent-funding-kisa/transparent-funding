@@ -6,7 +6,6 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import Select from '../../components/commons/select';
 import Cookies from 'universal-cookie';
 
 export default function FormDialog(props) {
@@ -28,11 +27,6 @@ export default function FormDialog(props) {
     if (cookies.get('color')) return cookies.get('color');
     return '';
   });
-
-  const handleCategory = (e) => {
-    cookies.set('category', e.target.value);
-    setCategory(e.target.value);
-  };
 
   const handleName = (e) => {
     cookies.set('name', e.target.value);
@@ -74,7 +68,6 @@ export default function FormDialog(props) {
             서포터에게 제공하는 리워드의 종류를 선택하고 해당하는 리워드 정보
             제공 고시를 입력하세요.
           </DialogContentText>
-          {/* <Select onChange={handleCategory} /> */}
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <TextField
               id="name"

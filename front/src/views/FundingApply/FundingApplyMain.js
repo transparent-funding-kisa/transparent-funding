@@ -5,7 +5,6 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Btn from '../../components/commons/button';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 
@@ -237,32 +236,15 @@ export default function ControlledAccordions(props) {
         <Button
           variant="contained"
           color="primary"
-          // onClick={() => {
-          //   props.onClick();
-          // }}
-          // onClick={() => {
-          //   console.log('test');
-          //   localhost:8080/api/newproject
-          //   http: axios
-          //     .post('/api/newproject', {
-          //       user: 'velopert',
-          //       message: 'hi',
-          //     })
-          //     .then((response) => {
-          //       console.log(response);
-          //     })
-          //     .catch((response) => {
-          //       console.log(response);
-          //     });
-          //   axios({
-          //     url: 'localhost:8080',
-          //     method: 'get',
-          //     data: {
-          //       foo: 'diary',
-          //     },
-          //   });
-          //   axios.post('http://localhost:8080/api/newproject');
-          // }}
+          onClick={() => {
+            props.onClick();
+          }}
+          onClick={() => {
+            console.log('test');
+            axios.post('http://localhost:8080/api/newproject').then((res) => {
+              console.log('test');
+            });
+          }}
         >
           제출 하기
         </Button>

@@ -9,7 +9,6 @@ const mainStyle = {
   width: '700px',
 
   marginLeft: '200px',
-  // alignItems: 'center',
 };
 function MainPage2() {
   return <span style={mainStyle}>새소식 페이지</span>;

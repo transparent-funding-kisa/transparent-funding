@@ -1,20 +1,14 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
-import Btn, { UploadButtons } from '../../components/commons/button';
 import Select from '../../components/commons/select';
 import Date from '../../components/commons/date';
 import Cookies from 'universal-cookie';
 import Button from '@material-ui/core/Button';
-import FundingApply from './FundingApply';
 import useCookies from '../../hooks/useCookies';
 
 const marginStyle = {
   marginLeft: '260px',
 };
-
-function valueText(name, money, category, date) {
-  return alert('test');
-}
 
 const FundingApply2 = (props) => {
   const cookies = new Cookies();
@@ -78,7 +72,6 @@ const FundingApply2 = (props) => {
         placeholder="목표 금액 입력"
         helperText="최소 1만 원 ~ 최대 1억 원으로 설정하세요."
         size="medium"
-        // fullWidth
         margin="normal"
         InputLabelProps={{
           shrink: true,
@@ -99,7 +92,6 @@ const FundingApply2 = (props) => {
         삽입 금지"
         size="medium"
         placeholder="예시 : https://ibb.co/0D3K4Mf"
-        // fullWidth
         margin="normal"
         InputLabelProps={{
           shrink: true,

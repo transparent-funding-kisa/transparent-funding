@@ -12,7 +12,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-
+import Button from '@material-ui/core/Button';
 import HomeIcon from '@material-ui/icons/Home';
 
 // import Accordion from './accordion';
@@ -45,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
   },
+  button: {
+    left: '83%',
+  },
 }));
 
 export default function PermanentDrawerLeft(props) {
@@ -66,6 +69,14 @@ export default function PermanentDrawerLeft(props) {
           <Typography variant="h6" noWrap>
             투명 펀딩
           </Typography>
+          <Button
+            className={classes.button}
+            variant="contained"
+            color="secondary"
+            href="/"
+          >
+            메인 페이지
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer
