@@ -27,17 +27,14 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/FundingApply/:Id" exact component={FundingApply}></Route>
-        <Route path="/Detail/:Id" exact component={Detail}></Route>
-        <Route path="/Signup" exact component={Signup}></Route>
-        <Route path="/Signin" exact component={Signin}></Route>
-        <Route path="/Home" exact component={Home} />
-        <Route path="/Main" component={MainPage} />
-        <Route path="/Mypage" exact component={Mypage}></Route>
+        <Route path="/funding-apply" exact component={FundingApply}></Route>
+        <Route path="/detail/:Id" exact component={Detail}></Route>
+        <Route path="/signup" exact component={Signup}></Route>
+        <Route path="/signin" exact component={Signin}></Route>
+        <Route path="/home" exact component={Home} />
+        <Route path="/main" component={MainPage} />
+        <Route path="/mypage" exact component={Mypage}></Route>
         <Route path="/invest" exact component={Invest}></Route>
-        
-       
-
         {/* <Route path="/1" component={Test}></Route> */}
       </Switch>
     </BrowserRouter>
