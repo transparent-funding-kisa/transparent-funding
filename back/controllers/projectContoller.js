@@ -7,10 +7,12 @@ exports.create = (req, res) => {
   
     // Create a project
     const project = {
-      title: req.body.title,
+      title: req.body.title,      
+      subTitle: req.body.subTitle,
       userId: req.body.userId,
       content: req.body.content,
-      goal: req.body.goal
+      goal: req.body.goal,
+      imageUrl: req.body.imageUrl
     };
   
     // Save project in the database
@@ -23,6 +25,24 @@ exports.create = (req, res) => {
         res.status(500).send({
           message:
             err.message || "Some error occurred while creating the project."
+        });
+      });
+  };
+
+   // find 6 of project
+   exports.setMain = (req, res) => {
+    
+    Project.findAll({
+      limit: 6,
+      order: [['id', 'DESC']]
+    })
+      .then(datas => {
+        res.send(datas);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).send({
+          message: err
         });
       });
   };
