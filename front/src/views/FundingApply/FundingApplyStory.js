@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Fade from '@material-ui/core/Fade';
 import FundingApplyStoryFade from './FundingApplyStoryFade';
 import Cookies from 'universal-cookie';
+import useCookies from '../../hooks/useCookies';
 
 const marginStyle = {
   marginLeft: '260px',
@@ -15,18 +16,25 @@ const marginStyle = {
 const FundingApply3 = (props) => {
   const cookies = new Cookies();
 
+  // const [open, setOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [display, setDisplay] = useState('none');
   const [projectSummary, setProjectSummary] = useState(() => {
     if (cookies.get('summary')) return cookies.get('summary');
     return '';
   });
+  const [story, setStory] = useCookies('story');
+
+  const handleStory = (story) => {
+    console.log(story);
+    setStory(story);
+  };
 
   const handlebtnFade = (e) => {
-    console.log(open);
     setOpen(!open);
     setDisplay(open ? 'none' : 'block');
   };
+
   const handleSummary = (e) => {
     setProjectSummary(e.target.value);
     cookies.set('summary', e.target.value);
@@ -68,12 +76,20 @@ const FundingApply3 = (props) => {
 
       <Fade in={open} style={{ display: display }}>
         <div>
-          <FundingApplyStoryFade></FundingApplyStoryFade>
+          <FundingApplyStoryFade
+            changeValue={handleStory}
+          ></FundingApplyStoryFade>
         </div>
       </Fade>
       <br></br>
       <br></br>
-      <Button variant="contained" color="primary" onClick={props.onClick}>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          props.onClick(projectSummary, story);
+        }}
+      >
         저장 하기
       </Button>
     </div>

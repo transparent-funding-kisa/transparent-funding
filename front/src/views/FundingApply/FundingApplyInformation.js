@@ -6,6 +6,7 @@ import Date from '../../components/commons/date';
 import Cookies from 'universal-cookie';
 import Button from '@material-ui/core/Button';
 import FundingApply from './FundingApply';
+import useCookies from '../../hooks/useCookies';
 
 const marginStyle = {
   marginLeft: '260px',
@@ -17,19 +18,12 @@ function valueText(name, money, category, date) {
 
 const FundingApply2 = (props) => {
   const cookies = new Cookies();
-  const [category, setCategory] = React.useState(() => {
-    if (cookies.get('category')) return cookies.get('category');
-    return '';
-  });
 
-  const [name, setName] = useState(() => {
-    if (cookies.get('name')) return cookies.get('name');
-    return '';
-  });
-  const [money, setMoney] = useState(() => {
-    if (cookies.get('money')) return cookies.get('money');
-    return '';
-  });
+  const [name, setName] = useCookies('name');
+  const [money, setMoney] = useCookies('money');
+  const [url, setUrl] = useCookies('url');
+  const [category, setCategory] = useCookies('category');
+  const [date, setDate] = useCookies('date');
 
   const handleCategory = (e) => {
     cookies.set('category', e.target.value);
@@ -44,6 +38,16 @@ const FundingApply2 = (props) => {
   const handleMoney = (e) => {
     setMoney(e.target.value);
     cookies.set('money', e.target.value);
+  };
+
+  const handleUrl = (e) => {
+    setUrl(e.target.value);
+    cookies.set('url', e.target.value);
+  };
+
+  const handleDate = (date) => {
+    cookies.set('date', date);
+    setDate(date);
   };
 
   return (
@@ -86,7 +90,6 @@ const FundingApply2 = (props) => {
       <p>
         <b>대표 이미지</b>
       </p>
-      <UploadButtons />
 
       <TextField
         id="outlined-full-width"
@@ -102,8 +105,8 @@ const FundingApply2 = (props) => {
           shrink: true,
         }}
         variant="outlined"
-        defaultValue={money}
-        onChange={handleMoney}
+        defaultValue={url}
+        onChange={handleUrl}
       />
       <p>
         <b>카테고리</b>
@@ -112,13 +115,13 @@ const FundingApply2 = (props) => {
       <p>
         <b>프로젝트 종료일</b>
       </p>
-      <Date />
+      <Date handleDate={handleDate} />
       <br />
       <Button
         variant="contained"
         color="primary"
-        onClick={(e) => {
-          props.onClick(e);
+        onClick={() => {
+          props.onClick(name, money, category, url, date);
         }}
       >
         저장 하기

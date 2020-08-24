@@ -233,40 +233,40 @@ export default function ControlledAccordions(props) {
         </AccordionDetails>
       </Accordion>
       <br />
-      {/* <a href="/"> */}
-      <Button
-        variant="contained"
-        color="primary"
-        // onClick={() => {
-        //   props.onClick();
-        // }}
-        onClick={() => {
-          console.log('test');
-          //localhost:8080/api/newproject
-          // http: axios
-          //   .post('/api/newproject', {
-          //     user: 'velopert',
-          //     message: 'hi',
-          //   })
-          //   .then((response) => {
-          //     console.log(response);
-          //   })
-          //   .catch((response) => {
-          //     console.log(response);
+      <a href="/">
+        <Button
+          variant="contained"
+          color="primary"
+          // onClick={() => {
+          //   props.onClick();
+          // }}
+          // onClick={() => {
+          //   console.log('test');
+          //   localhost:8080/api/newproject
+          //   http: axios
+          //     .post('/api/newproject', {
+          //       user: 'velopert',
+          //       message: 'hi',
+          //     })
+          //     .then((response) => {
+          //       console.log(response);
+          //     })
+          //     .catch((response) => {
+          //       console.log(response);
+          //     });
+          //   axios({
+          //     url: 'localhost:8080',
+          //     method: 'get',
+          //     data: {
+          //       foo: 'diary',
+          //     },
           //   });
-          // axios({
-          //   url: 'localhost:8080',
-          //   method: 'get',
-          //   data: {
-          //     foo: 'diary',
-          //   },
-          // });
-          axios.post('http://localhost:8080');
-        }}
-      >
-        제출 하기
-      </Button>
-      {/* </a> */}
+          //   axios.post('http://localhost:8080/api/newproject');
+          // }}
+        >
+          제출 하기
+        </Button>
+      </a>
     </div>
   );
 }

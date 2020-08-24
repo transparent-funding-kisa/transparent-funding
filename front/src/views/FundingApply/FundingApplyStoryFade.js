@@ -1,7 +1,7 @@
 import React from 'react';
 import Textfield from '@material-ui/core/TextField';
 import Cookies from 'universal-cookie';
-const FundingApply3Story = () => {
+const FundingApply3Story = (props) => {
   const cookies = new Cookies();
   const [story, setStory] = React.useState(() => {
     if (cookies.get('story')) return cookies.get('story');
@@ -11,6 +11,7 @@ const FundingApply3Story = () => {
   const handleStory = (e) => {
     cookies.set('story', e.target.value);
     setStory(e.target.value);
+    props.changeValue(e.target.value);
   };
   return (
     <>

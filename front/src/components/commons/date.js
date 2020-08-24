@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function DatePickers() {
+export default function DatePickers(props) {
   const classes = useStyles();
   const cookies = new Cookies();
 
@@ -26,6 +26,7 @@ export default function DatePickers() {
   const handleDate = (e) => {
     setDate(e.target.value);
     cookies.set('date', e.target.value);
+    props.handleDate(cookies.get('date'));
   };
   return (
     <form className={classes.container} noValidate>

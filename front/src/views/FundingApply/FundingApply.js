@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '@material-ui/core/Card';
 import CardIcon from '../../components/commons/card';
 import FundingApplyMain from './FundingApplyMain';
@@ -11,11 +11,23 @@ import Button from '@material-ui/core/Button';
 import Empty from '../Empty';
 
 const FundingApply = (props) => {
-  const [idx, setIdx] = React.useState(0);
-  const [infomation, setInfomation] = React.useState(false);
-  const [story, setStory] = React.useState(false);
-  const [reward, setReward] = React.useState(false);
-  const [infomationName, setInfomationName] = React.useState('');
+  const [idx, setIdx] = useState(0);
+  const [infomation, setInfomation] = useState(false);
+  const [story, setStory] = useState(false);
+  const [reward, setReward] = useState(false);
+  const [infomationName, setInfomationName] = useState('');
+
+  const [name, setName] = useState('');
+  const [money, setMoney] = useState(10000);
+  const [url, setUrl] = useState('');
+  const [category, setCategory] = useState('가구');
+
+  const [rewardName, setRewardName] = useState('');
+  const [material, setMaterial] = useState('');
+  const [color, setColor] = useState('');
+
+  const [summary, setSummary] = useState('');
+  const [storyContent, setStoryContent] = useState('');
 
   const Idx = parseInt(idx);
 
@@ -24,28 +36,36 @@ const FundingApply = (props) => {
     console.log(value);
   }
 
-  const handleInfomation = (e) => {
+  const handleInfomation = (name, money, url, category, date) => {
     setIdx(0);
-    console.log(e.target.value);
+    setName(name);
+    setMoney(money);
+    setUrl(url);
+    setCategory(category);
+    setInfomation(!infomation);
+    console.log(name);
+    console.log(money);
+    console.log(url);
+    console.log(category);
+    console.log(date);
   };
 
-  function handleInfomation2(name) {
-    setIdx(0);
-    setInfomation(!infomation);
-    setInfomationName(name);
-    console.log(name);
-    console.log(infomationName);
-    console.log(name.target);
-  }
-
-  function handleStory() {
+  function handleStory(summary, storyContent) {
     setIdx(0);
     setStory(!story);
+    console.log(storyContent);
+    console.log(story);
+    setSummary(summary);
+    setStoryContent(storyContent);
   }
 
-  function handleReward() {
+  function handleReward(rewardName, material, color) {
     setIdx(0);
     setReward(!reward);
+    console.log(rewardName, material, color);
+    setRewardName(rewardName);
+    setMaterial(material);
+    setColor(color);
   }
 
   function renderSwitch(value) {

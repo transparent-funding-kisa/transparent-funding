@@ -74,7 +74,7 @@ export default function FormDialog(props) {
             서포터에게 제공하는 리워드의 종류를 선택하고 해당하는 리워드 정보
             제공 고시를 입력하세요.
           </DialogContentText>
-          <Select onChange={handleCategory} />
+          {/* <Select onChange={handleCategory} /> */}
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <TextField
               id="name"
@@ -113,16 +113,9 @@ export default function FormDialog(props) {
           </Button>
           <Button
             onClick={() => {
-              //1. 화살표함수가 아닌 상위 컴포넌트의 함수를 호출할 때, 인자를 넘기는 방법
-              //2. e.target.value가 뭔지 모르겠다.
-              //3. 화살표함수에서 ()안에 무엇이 들어가나요..?
-              props.onClick(category, name, material, color);
+              props.onClick(name, material, color);
               handleClose();
             }}
-            // onClick={(e) => {
-            //   props.onClick(e.target.color);
-            //   handleClose();
-            // }}
             color="primary"
             variant="contained"
           >
