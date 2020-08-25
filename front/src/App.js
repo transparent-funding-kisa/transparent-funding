@@ -11,22 +11,14 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-<<<<<<< HEAD
-        <Route path="/FundingApply/:Id" exact component={FundingApply}></Route>
-        <Route path="/Detail/:Id" exact component={Detail}></Route>
-        <Route path="/Signup" exact component={Signup}></Route>
-        <Route path="/Signin" exact component={Signin}></Route>
-        <Route path="/" exact component={MainPage} />
-=======
+
         <Route path="/funding-apply" exact component={FundingApply}></Route>
         <Route path="/detail/:Id" exact component={Detail}></Route>
         <Route path="/signup" exact component={Signup}></Route>
         <Route path="/signin" exact component={Signin}></Route>
-        <Route path="/home" exact component={Home} />
         <Route path="/main" component={MainPage} />
 
         {/* <Route path="/1" component={Test}></Route> */}
->>>>>>> 637064e98bfe3075d37ccf67d3f823c2c03c8759
       </Switch>
     </BrowserRouter>
   );

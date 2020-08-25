@@ -135,10 +135,10 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
      <Link to="/Signin">
-      <MenuItem onClick={handleMenuClose} >Login</MenuItem>
+      <MenuItem onClick={handleMenuClose} >Sign Up</MenuItem>
       </Link>
       <Link to="/Signup">
-      <MenuItem onClick={handleMenuClose} >Sign Up</MenuItem>
+      <MenuItem onClick={handleMenuClose} >Log In</MenuItem>
       </Link>
 
     </Menu>
@@ -176,8 +176,8 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-           투크
+          <Typography className={classes.title} variant="h7" noWrap>
+           TK
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>

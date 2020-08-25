@@ -2,6 +2,7 @@ import React from "react";
 import PrimarySearchAppBar from "../components/commons/Menu"
 import FundProduct from "../components/commons/ProductCard"
 import MainPost,{mainFeaturedPost} from "../components/commons/MainPost"
+import Footer from '../components/commons/Footer'
 import Sidebar, {ranking} from "../components/commons/Sidebar"
 import { Grid} from "@material-ui/core";
 import Divider from '@material-ui/core/Divider';
@@ -25,7 +26,7 @@ const MainPage = () => {
             </Sidebar>
         </Grid>
         </Grid>
-
+        <Footer></Footer>
         </>
     )
 }

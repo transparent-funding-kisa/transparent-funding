@@ -21,9 +21,10 @@ const useStyles = makeStyles((theme) => ({
   }));
 
   export const ranking = {
-    title: '투크',
-    description:
-      '투크는 누가 만들었을까? 투크의 개발자가 궁금하다면 클릭하세요 ' ,
+    title: '투크는 누가 만들었을까? 투크의 개발자가 궁금하다면 클릭하세요',
+    description: [ 
+      {des: '투크는 누가 만들었을까? 투크의 개발자가 궁금하다면 클릭하세요', url : '#' }
+    ],
     archives: [
       { title: '대형빈백', url: '#' },
       { title: '아로마테라피', url: '#' },
@@ -45,9 +46,9 @@ const useStyles = makeStyles((theme) => ({
       <Grid item xs={12} >
         <Paper elevation={0} className={classes.sidebarAboutBox}>
           <Typography variant="h6" gutterBottom>
-            {title}
-          </Typography>
-          <Typography>{description}</Typography>
+          {archives.title}
+           </Typography>
+          <Typography>{title}</Typography>
         </Paper>
         <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
           실시간 랭킹

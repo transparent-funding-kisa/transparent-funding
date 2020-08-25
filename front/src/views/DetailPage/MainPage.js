@@ -1,6 +1,5 @@
 import React from 'react';
 import Sidebar from './Sidebar';
-import { makeStyles } from '@material-ui/core/styles';
 
 import MainPage0 from './MainPage0';
 import MainPage1 from './MainPage1';
@@ -9,9 +8,6 @@ import MainPage3 from './MainPage3';
 import MainPage4 from './MainPage4';
 import Lab from './Lab';
 
-import Container from '@material-ui/core/Container';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 //css 적용이 안됩니다..
 
 function MainPage(props) {
