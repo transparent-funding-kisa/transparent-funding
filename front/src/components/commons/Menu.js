@@ -135,33 +135,16 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
      <Link to="/Signin">
-      <MenuItem onClick={handleMenuClose} >Sign Up</MenuItem>
+      <MenuItem onClick={handleMenuClose} >SignUp</MenuItem>
       </Link>
       <Link to="/Signup">
-      <MenuItem onClick={handleMenuClose} >Log In</MenuItem>
+      <MenuItem onClick={handleMenuClose} >LogIn</MenuItem>
+      </Link>
+      <Link to="/mypage">
+      <MenuItem onClick={handleMenuClose} >MyPage</MenuItem>
       </Link>
 
     </Menu>
-  );
-
-  const mobileMenuId = 'primary-search-account-menu-mobile';
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-  <Link to="/Signin">
- <MenuItem onClick={handleMenuClose}>Login</MenuItem>
- </Link>
- <Link to="/Signup">
-      <MenuItem onClick={handleMenuClose}>Sign In</MenuItem>
-      </Link>
-     </Menu>
   );
 
   return (
@@ -200,7 +183,7 @@ export default function PrimarySearchAppBar() {
             color="inherit"
             aria-label="open drawer"
           >
-        <Link to="/FundingApply">
+        <Link to="funding-apply">
           <Button  className={classes.openBtn} size="small" variant="contained">
             프로젝트 오픈신청
           </Button>
@@ -221,20 +204,8 @@ export default function PrimarySearchAppBar() {
               <AccountCircle />
             </IconButton>
           </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </div>
         </Toolbar>
       </AppBar>
-      {renderMobileMenu}
       {renderMenu}
     </div>
   );
