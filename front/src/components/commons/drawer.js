@@ -73,7 +73,7 @@ export default function PermanentDrawerLeft(props) {
             className={classes.button}
             variant="contained"
             color="secondary"
-            href="/"
+            href="/main"
           >
             메인 페이지
           </Button>
