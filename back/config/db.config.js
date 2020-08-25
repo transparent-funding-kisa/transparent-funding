@@ -1,4 +1,5 @@
 module.exports = {
+
     HOST: "localhost",
     USER: "root",
     PASSWORD: "leesola97",
@@ -11,3 +12,5 @@ module.exports = {
       idle: 10000
     }
   };
+
+

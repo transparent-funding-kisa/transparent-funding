@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Sidebar from './Sidebar';
 
 import MainPage0 from './MainPage0';
@@ -8,31 +9,26 @@ import MainPage3 from './MainPage3';
 import MainPage4 from './MainPage4';
 import Lab from './Lab';
 
-//css 적용이 안됩니다..
+
+import MainPageStory from './MainPageStory';
+import MainPageReward from './MainPageReward';
+import MainPageNews from './MainPageNews';
+import MainPageCommunity from './MainPageCommunity';
+import Lab from './Lab';
+
 
 function MainPage(props) {
   const Idx = parseInt(props.Idx);
 
-  // return (
-  //   <React.Fragment>
-  //     <CssBaseline />
-  //     <Container fixed>
-  //       <Typography
-  //         component="div"
-  //         style={{ backgroundColor: '#cfe8fc', height: '100vh' }}
-  //       />
-  //     </Container>
-  //   </React.Fragment>
-  // );
   switch (Idx) {
     case 0:
-      return <MainPage0 />;
+      return <MainPageStory />;
     case 1:
-      return <MainPage1 />;
+      return <MainPageReward />;
     case 2:
-      return <MainPage2 />;
+      return <MainPageNews />;
     case 3:
-      return <MainPage3 />;
+      return <MainPageCommunity />;
     case 4:
       return <Lab />;
     default:

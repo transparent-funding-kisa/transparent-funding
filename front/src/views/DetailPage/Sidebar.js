@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import { TextField } from '@material-ui/core';
 
 const dummy = {
   success: false,
@@ -27,7 +28,15 @@ const useStyles = makeStyles({
 
 function Sidebar(props) {
   const classes = useStyles();
+  const [money, setMoney] = React.useState(0);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(money + '원 펀딩!');
+  };
 
+  const handleChange = (e) => {
+    setMoney(e.target.value);
+  };
   return (
     <>
       <span className={classes.root}>
@@ -40,8 +49,6 @@ function Sidebar(props) {
             style={{ marginTop: '15px' }}
           />
         </Typography>
-
-        {/* 왜작동안할까요..? */}
 
         <Box mt={5}>
           <Box mb={5}>
@@ -60,10 +67,16 @@ function Sidebar(props) {
               <b>{dummy.personnel}</b>명의 서포터
             </Typography>
           </Box>
-
-          <Button variant="contained" color="primary">
-            펀딩하기
-          </Button>
+          <form onSubmit={handleSubmit}>
+            <TextField
+              name="money"
+              type="number"
+              onChange={handleChange}
+            ></TextField>
+            <Button variant="contained" color="primary" type="submit">
+              펀딩하기
+            </Button>
+          </form>
         </Box>
       </span>
     </>

@@ -9,10 +9,9 @@ const mainStyle = {
   width: '700px',
 
   marginLeft: '200px',
-  // alignItems: 'center',
 };
-function MainPage1() {
-  return <span style={mainStyle}>리워드 안내 페이지</span>;
+function MainPage2() {
+  return <span style={mainStyle}>새소식 페이지</span>;
 }
 
-export default MainPage1;
+export default MainPage2;
