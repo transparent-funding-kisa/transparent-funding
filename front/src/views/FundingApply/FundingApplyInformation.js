@@ -13,7 +13,10 @@ const marginStyle = {
 const FundingApply2 = (props) => {
   const cookies = new Cookies();
 
-  const [name, setName] = useCookies('name');
+  const [name, setName] = useState(() => {
+    if (cookies.get('name')) return cookies.get('name');
+    return '';
+  });
   const [money, setMoney] = useCookies('money');
   const [url, setUrl] = useCookies('url');
   const [category, setCategory] = useCookies('category');
@@ -37,6 +40,7 @@ const FundingApply2 = (props) => {
   const handleUrl = (e) => {
     setUrl(e.target.value);
     cookies.set('url', e.target.value);
+    console.log(url);
   };
 
   const handleDate = (date) => {

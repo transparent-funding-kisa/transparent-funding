@@ -33,25 +33,20 @@ const FundingApply = (props) => {
     console.log(value);
   }
 
-  const handleInfomation = (name, money, url, category, date) => {
+  const handleInfomation = (name, money, category, url, date) => {
     setIdx(0);
     setName(name);
     setMoney(money);
     setUrl(url);
     setCategory(category);
     setInfomation(!infomation);
-    console.log(name);
-    console.log(money);
-    console.log(url);
-    console.log(category);
-    console.log(date);
+    console.log('money' + money);
+    console.log('url' + url);
   };
 
   function handleStory(summary, storyContent) {
     setIdx(0);
     setStory(!story);
-    console.log(storyContent);
-    console.log(story);
     setSummary(summary);
     setStoryContent(storyContent);
   }
@@ -74,6 +69,10 @@ const FundingApply = (props) => {
             info={infomation}
             story={story}
             reward={reward}
+            title={name}
+            goal={money}
+            imageUrl={url}
+            content={summary}
           />
         );
       case 1:

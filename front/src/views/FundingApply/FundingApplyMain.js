@@ -232,34 +232,34 @@ export default function ControlledAccordions(props) {
         </AccordionDetails>
       </Accordion>
       <br />
-      <a href="/main">
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() => {
-            props.onClick();
-          }}
-          onClick={() => {
-            // axios
-            //   .post('http://localhost:8080/api/newproject', {
-            //     title: '넣으실제목',
-            //     subTitle: '표시될소제목',
-            //     userId: 1,
-            //     content: '본문내용 ~~~',
-            //     goal: 500000,
-            //     imageUrl: 'http://postimage.cc/qurey~~임시계정.jpg',
-            //   })
-            //   .then(function (response) {
-            //     console.log(response);
-            //   })
-            //   .catch(function (error) {
-            //     console.log(error);
-            //   });
-          }}
-        >
-          제출 하기
-        </Button>
-      </a>
+      {/* <a href="/main"> */}
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          props.onClick();
+        }}
+        onClick={() => {
+          axios
+            .post('http://localhost:8080/api/newproject', {
+              title: props.title,
+              subTitle: '표시될소제목',
+              userId: 1,
+              content: props.content,
+              goal: parseInt(props.goal),
+              imageUrl: props.imageUrl,
+            })
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        }}
+      >
+        제출 하기
+      </Button>
+      {/* </a> */}
     </div>
   );
 }

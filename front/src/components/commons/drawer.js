@@ -87,7 +87,7 @@ export default function PermanentDrawerLeft(props) {
         }}
         anchor="left"
       >
-        <a href="/FundingApply/0">
+        <a href="/funding-apply">
           <HomeIcon
             color="primary"
             style={{
