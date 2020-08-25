@@ -135,7 +135,7 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
      <Link to="/Signin">
-      <MenuItem onClick={handleMenuClose} >Sign Up</MenuItem>
+      <MenuItem onClick={handleMenuClose} >Sign UP</MenuItem>
       </Link>
       <Link to="/Signup">
       <MenuItem onClick={handleMenuClose} >Log In</MenuItem>
@@ -200,7 +200,7 @@ export default function PrimarySearchAppBar() {
             color="inherit"
             aria-label="open drawer"
           >
-        <Link to="/FundingApply">
+        <Link to="funding-apply">
           <Button  className={classes.openBtn} size="small" variant="contained">
             프로젝트 오픈신청
           </Button>

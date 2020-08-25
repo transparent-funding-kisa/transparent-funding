@@ -1,13 +1,5 @@
 import React from 'react';
 
-import Sidebar from './Sidebar';
-
-import MainPage0 from './MainPage0';
-import MainPage1 from './MainPage1';
-import MainPage2 from './MainPage2';
-import MainPage3 from './MainPage3';
-import MainPage4 from './MainPage4';
-import Lab from './Lab';
 
 
 import MainPageStory from './MainPageStory';
