@@ -1,12 +1,10 @@
+
 import React,{useEffect} from 'react'
 import {post} from 'axios'
 import axios from 'axios';
-
 import DialogTitle from '@material-ui/core/DialogTitle';
-
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-
 import Cookies from 'universal-cookie';
 
 axios.defaults.withCredentials = true;
@@ -14,15 +12,11 @@ const headers = { withCredentials: true };
 
 const cookie = new Cookies();
 
-
-
 const styles = theme =>({
     hidden :{
         display:'none'
     }
 })
-
-
 
 
 class Signin extends React.Component{
