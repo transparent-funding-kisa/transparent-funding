@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
     position: 'relative',
     width: '100%',
-    height : '450px',
+    height : '300px',
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(4),
@@ -39,11 +39,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const mainFeaturedPost = {
-  title: '투명한 크라우드 펀딩 "투크"',
-  description:'투명한 크라우드 펀딩에 함께합시다 룰루',
-  image: 'https://source.unsplash.com/daily',
+  title:  '투명한 펀딩, 필요하셨죠?' ,
+  description: '오픈뱅킹 API와 결합한 투명 펀딩에서 지금 체험해보세요! ',
+  image: 'https://www.wallpaperflare.com/static/660/288/955/blur-colorful-colourful-drops-of-water-wallpaper-preview.jpg',
   imgText: 'main image description',
-  linkText: '투크가 무엇인가요?',
+  linkText: '펀딩받은 금액을을 일부 공개할 수 있는 주최진과 어떻게 쓰이는지 궁금한 투자자를 이어드립니다.',
 };
 
 

@@ -160,7 +160,7 @@ export default function PrimarySearchAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h7" noWrap>
-           TK
+           ♡
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>

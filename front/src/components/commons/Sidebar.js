@@ -21,9 +21,9 @@ const useStyles = makeStyles((theme) => ({
   }));
 
   export const ranking = {
-    title: '투크는 누가 만들었을까? 투크의 개발자가 궁금하다면 클릭하세요',
+    title: '해당 서비스는 Beta Test 모드로 축소 운영되고 있습니다. ',
     description: [ 
-      {des: '투크는 누가 만들었을까? 투크의 개발자가 궁금하다면 클릭하세요', url : '#' }
+      {des: '미표시 데이터', url : '#' }
     ],
     archives: [
       { title: '대형빈백', url: '#' },
@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
           </Link>
         ))}
         <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
-          투크 공유하기
+          투명펀딩 공유하기
         </Typography>
         {social.map((network) => (
           <Link display="block" variant="body1" href="#" key={network}>
@@ -71,6 +71,7 @@ const useStyles = makeStyles((theme) => ({
             </Grid>
           </Link>
         ))}
+        <h6>문의: service@transfunding.com</h6>
       </Grid>
     );
   }
