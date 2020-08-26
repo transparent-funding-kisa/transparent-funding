@@ -1,7 +1,4 @@
 import React from 'react';
-
-
-
 import MainPageStory from './MainPageStory';
 import MainPageReward from './MainPageReward';
 import MainPageNews from './MainPageNews';
